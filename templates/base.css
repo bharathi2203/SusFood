@@ -194,6 +194,25 @@ nav img{
     object-fit: cover;
 }
 
+#outputCards{
+    text-align: center;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.leftIcon{
+    font-size: 25px;
+    margin-right: 35px;
+}
+.rightIcon{
+    font-size: 25px;
+    position: absolute;
+    margin-left: 1225px;
+}
+
+button { all: unset; }
+
 /* animated css */
 .animate__animated.animate__zoomIn{
     --animate-delay: 1.7s;

@@ -12,6 +12,9 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -32,10 +35,121 @@
         </div>
     </nav>
 
-    <div>
-        <food-card restName="Panera Bread", ></food-card>
-            <script src="foodCards.js"></script>
+    <div id = "outputCards">
+        <button id = "leftIcon" class="leftIcon"><span class="glyphicon glyphicon-chevron-left"></span></button>
+        <button id= "rightIcon" class="rightIcon"><span class="glyphicon glyphicon-chevron-right"></span></button>
+        <script>
+            var offset = 0;
+            var endOffset = offset + 4;
+
+            var cardsData = [{
+                name: "Panera Bread",
+                img: "https://www.nrn.com/sites/nrn.com/files/styles/article_featured_retina/public/C222-ChefsChickenSandwiches_H.jpg?itok=jIZV0U7v",
+                descrip: "Panera Bread is delicious"
+            },
+            {
+                name: "Tsaocaa",
+                img: "https://avatarfiles.alphacoders.com/121/121594.jpg",
+                descrip: "Boba!!"
+            },
+            {
+                name: "Sorrento Pizzeria & Grill",
+                img: "https://media-cdn.tripadvisor.com/media/photo-s/07/64/c5/eb/pizz-traiteur-pizzeria.jpg",
+                descrip: "Pizza pizza"
+            },
+            {
+                name: "Panera Bread2",
+                img: "https://www.nrn.com/sites/nrn.com/files/styles/article_featured_retina/public/C222-ChefsChickenSandwiches_H.jpg?itok=jIZV0U7v",
+                descrip: "Panera Bread is delicious"
+            },
+            {
+                name: "Panera Bread3",
+                img: "https://www.nrn.com/sites/nrn.com/files/styles/article_featured_retina/public/C222-ChefsChickenSandwiches_H.jpg?itok=jIZV0U7v",
+                descrip: "Panera Bread is delicious"
+            },
+            {
+                name: "Panera Bread4",
+                img: "https://www.nrn.com/sites/nrn.com/files/styles/article_featured_retina/public/C222-ChefsChickenSandwiches_H.jpg?itok=jIZV0U7v",
+                descrip: "Panera Bread is delicious"
+            },
+            {
+                name: "Panera Bread5",
+                img: "https://www.nrn.com/sites/nrn.com/files/styles/article_featured_retina/public/C222-ChefsChickenSandwiches_H.jpg?itok=jIZV0U7v",
+                descrip: "Panera Bread is delicious"
+            },
+            {
+                name: "Panera Bread6",
+                img: "https://www.nrn.com/sites/nrn.com/files/styles/article_featured_retina/public/C222-ChefsChickenSandwiches_H.jpg?itok=jIZV0U7v",
+                descrip: "Panera Bread is delicious"
+            }
+        ]   
+            getCards()
+
+            function getCards (){
+                console.log(offset, endOffset)
+                if(endOffset > 8){
+                    endOffset = 4;
+                    offset = 0;
+                }
+                else if(offset < 0){
+                    endOffset = 8;
+                    offset = 4;
+                }
+
+                for(var i = offset; i < endOffset; i++){
+                    console.log(cardsData[i])
+                    let div = document.createElement('div')
+                    div.className = "block";
+                    div.id = i;
+                    div.innerHTML = `<img src=${cardsData[i].img}}>
+                        <div class = "name">
+                            ${cardsData[i].name}
+                        </div>
+                        <div class="description">${cardsData[i].descrip}</div>`
+
+                    document.getElementById('outputCards').append(div)
+                }
+            }
+
+            // for (const card of cardsData){
+            //     let div = document.createElement('div')
+            //     div.className = "block";
+            //     div.innerHTML = `<img src=${card.img}}>
+            //         <div class = "name">
+            //             ${card.name}
+            //         </div>
+            //         <div class="description">${card.descrip}</div>`
+
+            //     document.getElementById('outputCards').append(div)
+            // }
+
+            var leftButton = document.getElementById('leftIcon')
+            var rightButton = document.getElementById('rightIcon')
+
+            leftButton.onclick = function(){
+                console.log("clicked!!")
+                for(var i = offset; i < endOffset; i ++){
+                    document.getElementById(i).remove()
+                }
+                offset -= 4;
+                endOffset -=4;
+                getCards()
+            }
+
+            rightButton.onclick = function(){
+                console.log("clicked!!")
+                for(var i = offset; i < endOffset; i ++){
+                    document.getElementById(i).remove()
+                }
+                offset += 4; 
+                endOffset += 4;
+                getCards()
+            }
+
+        </script>
     </div>
+    <!-- <script src="foodCards.js"></script> -->
+  
     <!-- Carousel -->
     <!-- <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -110,7 +224,4 @@
           </div> 
     </section>
 </body
-<script>
-    $('#carouselExampleControls').carousel();
-</script>
 </html>
