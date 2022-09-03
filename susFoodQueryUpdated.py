@@ -46,9 +46,7 @@ def sort_by_sus(arr, search):
     l = list(l)
     l.sort(reverse = True)
     best.extend(l)
-    n = len(best) // 4
-    n = n * 4
-    return best[:n]
+    return best
 
 def get_distance(og_coords, dest_coords):
     if og_coords[0] == None or dest_coords[0] == None or og_coords[1] == None or dest_coords[1] == None:
@@ -115,6 +113,7 @@ def get_search_results(search_req):
                     "rLat": fastFood.lat(),
                     "rLong": fastFood.lon(),
                     "picture": picture, 
+                    "cuisine": "fast_food",
                     "opening_hours": opening_hours,
                     "distance": get_distance(coords, (restaurants.lat(), restaurants.lon())),
                     "organic": random.randint(0, 10), 
@@ -135,6 +134,7 @@ def get_search_results(search_req):
                     "rLat": cafe.lat(),
                     "rLong": cafe.lon(),
                     "picture": picture, 
+                    "cuisine": "cafe",
                     "opening_hours": opening_hours,
                     "distance": get_distance(coords, (restaurants.lat(), restaurants.lon())),
                     "organic": random.randint(0, 20), 
