@@ -1,4 +1,5 @@
 
+from json import tool
 import folium
 import webbrowser 
 from OSMPythonTools.nominatim import Nominatim 
@@ -7,6 +8,9 @@ from OSMPythonTools.overpass import overpassQueryBuilder, Overpass
 from bing_image_downloader import downloader
 import os
 import pandas as pd
+import random
+
+
 
 
 overpass = Overpass()
@@ -89,7 +93,7 @@ for cafe in result3.elements():
 
 df = pd.DataFrame.from_dict(myDB)
 df.to_csv(r'RestDataBase2.csv', index = True, header = True)
-print (df)
+# print (df)
 
 # map = folium.Map(location= [39.952583, -75.165222], zoom_start = 15)
 # EDIT BELOW 
@@ -103,13 +107,22 @@ class Map:
         my_map = folium.Map(location = self.center, zoom_start = self.zoom_start)
 
         #Display the map
+        restDB = pd.read_csv("RestDataBase.csv")
+        restloc = restDB.loc[0]
+        colours = ["green", "blue", "red", "pink", "purple", "cyan"]
+        for _, x in restDB.iterrows():
+            folium.Marker (
+            location = [x['rLat'], x['rLong']], popup = x["Name"], 
+            tooltip = x['Name'],
+            # Fix colours
+            icon = folium.Icon(color = random(colours)), 
+
+            ).add_to(my_map)
         my_map.save("map.html")
         webbrowser.open("map.html")
 
 
 #Define coordinates of where we want to center our map
 coords = [39.9522, -75.1932]
-map = Map(center = coords, zoom_start = 5)
-# restDB = pd.read_csv("")
-# restloc = restloc.loc[]
+map = Map(center = coords, zoom_start = 25)
 map.showMap()

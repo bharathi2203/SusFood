@@ -15,11 +15,11 @@
 13,Magic Carpet Foods,39.952567,-75.1923796,"~/Downloads/dataset/Magic Carpet Foods mediterranean ""food"" restaurant/Image_1.jpg",11:00-15:00
 14,City Tap House,39.9543263,-75.2015278,"~/Downloads/dataset/City Tap House fancy ""food"" restaurant/Image_1.jpg",Mo-Th 11:30-00:00; Fr 11:30-02:00; Sa 11:00-02:00; Su 11:00-00:00
 15,Spread Bagelry,39.9545518,-75.1947958,"~/Downloads/dataset/Spread Bagelry bagels ""food"" restaurant/Image_1.jpg",Mo-Su 06:00-16:00
-16,Hummus Grill,,,"~/Downloads/dataset/Hummus Grill mediterranean ""food"" restaurant/Image_1.jpg",Mo-Fr 11:00-20:45; Sa 11:00-19:45; Su 12:00-20:45
-17,Baby Blues BBQ,,,"~/Downloads/dataset/Baby Blues BBQ fancy ""food"" restaurant/Image_1.jpg",Mo-Su 09:00 - 18:00
-18,Doc Magrogan's,,,"~/Downloads/dataset/Doc Magrogan's fancy ""food"" restaurant/Image_1.jpg",Mo-Su 09:00 - 18:00
-19,White Dog Cafe,,,"~/Downloads/dataset/White Dog Cafe fancy ""food"" restaurant/Image_1.jpg",Mo-Fr 11:00-14:30; Sa-Su 09:30-14:30; Mo-Su 14:30-17:00; Mo-Th 17:00-21:30; Fr-Sa 17:00-22:00; Su 17:00-21:00
-20,Federal Donuts,,,"~/Downloads/dataset/Federal Donuts donut;doughnut;fried_chicken;donuts;doughnuts ""food"" restaurant/Image_1.jpg",Mo-Su 07:00-19:00
+16,Hummus Grill,39.95436,-75.20217,"~/Downloads/dataset/Hummus Grill mediterranean ""food"" restaurant/Image_1.jpg",Mo-Fr 11:00-20:45; Sa 11:00-19:45; Su 12:00-20:45
+17,Baby Blues BBQ,39.95355,-75.19310,"~/Downloads/dataset/Baby Blues BBQ fancy ""food"" restaurant/Image_1.jpg",Mo-Su 09:00 - 18:00
+18,Doc Magrogan's,39.95345,-75.19319,"~/Downloads/dataset/Doc Magrogan's fancy ""food"" restaurant/Image_1.jpg",Mo-Su 09:00 - 18:00
+19,White Dog Cafe,39.95402,-75.19287,"~/Downloads/dataset/White Dog Cafe fancy ""food"" restaurant/Image_1.jpg",Mo-Fr 11:00-14:30; Sa-Su 09:30-14:30; Mo-Su 14:30-17:00; Mo-Th 17:00-21:30; Fr-Sa 17:00-22:00; Su 17:00-21:00
+20,Federal Donuts,39.95372,-75.19298,"~/Downloads/dataset/Federal Donuts donut;doughnut;fried_chicken;donuts;doughnuts ""food"" restaurant/Image_1.jpg",Mo-Su 07:00-19:00
 21,Qdoba,39.9531356,-75.2029524,~/Downloads/dataset/Qdoba food/Image_1.jpg,Mo-Su 09:00 - 18:00
 22,Così,39.9535857,-75.1949927,~/Downloads/dataset/Così food/Image_1.jpg,Mo-Su 09:00 - 18:00
 23,Panera Bread,39.9539597,-75.2029124,~/Downloads/dataset/Panera Bread food/Image_1.jpg,Mo-Su 09:00 - 18:00
@@ -31,7 +31,7 @@
 29,Wahoo's Fish Taco,39.9535811,-75.1873233,~/Downloads/dataset/Wahoo's Fish Taco food/Image_1.jpg,Mo-Fr 11:00-23:00; Sa-Su 12:00-23:00
 30,Dunkin',39.9547948,-75.2023165,~/Downloads/dataset/Dunkin' food/Image_1.jpg,24/7
 31,CM chicken,39.9536404,-75.1872815,~/Downloads/dataset/CM chicken food/Image_1.jpg,Mo-Su 09:00 - 18:00
-32,McDonald's,,,~/Downloads/dataset/McDonald's food/Image_1.jpg,24/7
+32,McDonald's,39.95477,-75.20272,~/Downloads/dataset/McDonald's food/Image_1.jpg,24/7
 33,Starbucks,39.9530145,-75.1922885,~/Downloads/dataset/Starbucks 'cafe'/Image_1.jpg,"Mo-Fr 05:30-24:00; Sa,Su 06:00-24:00"
 34,World Cafe Live,39.9521611,-75.1851511,~/Downloads/dataset/World Cafe Live 'cafe'/Image_1.jpg,Mo-Su 09:00 - 18:00
 35,Saxbys,39.9528787,-75.2030521,~/Downloads/dataset/Saxbys 'cafe'/Image_1.jpg,Mo-Su 09:00 - 18:00
@@ -40,4 +40,4 @@
 38,United By Blue,39.9530684,-75.1932054,~/Downloads/dataset/United By Blue 'cafe'/Image_1.jpg,"Mo-Fr 07:00-19:00; Sa,Su 08:00-19:00"
 39,Starbucks,39.9524696,-75.1993841,~/Downloads/dataset/Starbucks 'cafe'/Image_1.jpg,Mo-Su 09:00 - 18:00
 40,Starbucks,39.9539925,-75.2003926,~/Downloads/dataset/Starbucks 'cafe'/Image_1.jpg,Mo-Su 09:00 - 18:00
-41,Avril 50,,,~/Downloads/dataset/Avril 50 'cafe'/Image_1.jpg,Mo-Fr 07:30-18:00; Sa 10:00-17:00
+41,Avril 50,39.95356,-75.19254,~/Downloads/dataset/Avril 50 'cafe'/Image_1.jpg,Mo-Fr 07:30-18:00; Sa 10:00-17:00
