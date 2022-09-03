@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'SusFood',
+    'account',
 
     # django apps
     'django.contrib.admin',
@@ -70,6 +71,8 @@ TEMPLATES = [
         },
     },
 ]
+
+AUTH_USER_MODEL = 'account.Account'
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
