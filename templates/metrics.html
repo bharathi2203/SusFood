@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SusFood</title>
+    <link rel="stylesheet" href="metrics.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- animate css link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="base.html"><img src="pics/logo.png"></a>
+        <div id="Title"><a href="base.html">SusFood</a></div>
+        <div class="search-container">
+            <form action="/action_page.php">
+                <input class="search" type="text" placeholder="Search for some sus food..." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <ul>
+                <li><a><img src="pics/shopping-cart.png" id="navIcon"></a></li>
+                <li><a><img src="pics/user.png" id="navIcon"></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <img src="pics/paneraBread.jpeg" id="banner">
+    <div class="heading"> Panera Bread </div>
+    <div id="info">200 S 40th St | (855) 372-6372</div>
+    <div id="rating">
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <div id="ratePeople">623 ratings</div>
+    </div>
+
+    <div id="tabLinks">
+        <a href="#menuLinks"><button class="tab">Menu</button></a>
+        <a href="#sus"><button class="tab">Sustainability</button></a>
+        <a href="#about"><button class="tab">About</button></a>
+        <a href="#reviews"><button class="tab">Reviews</button></a>
+    </div>
+
+    <script>
+        // Get the container element
+        var btnContainer = document.getElementById("tabLinks");
+
+        // Get all buttons with class="btn" inside the container
+        var btns = btnContainer.getElementsByClassName("tab");
+
+        // Loop through the buttons and add the active class to the current/clicked button
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+
+                // If there's no active class
+                if (current.length > 0) {
+                current[0].className = current[0].className.replace(" active", "");
+                }
+
+                // Add the active class to the current/clicked button
+                this.className += " active";
+            });
+        }
+    </script>
+
+    <div class="container">
+        <div class="menu-items" id="menuLinks">
+            <ul id="menuNavBar">
+                <li><a href="#" id="sandwiches">Sandwiches</a></li>
+                <li><a href="#" id="salads">Salads</a></li>
+                <li><a href="#" id="soups">Soups & Mac</a></li>
+                <li><a href="#" id="pizza">Pizza</a></li>
+                <li><a href="#" id="bakery">Bakery</a></li>
+                <li><a href="#" id="beverages">Beverages</a></li>
+                <li><a href="#" id="family">Family Feast Value Meals</a></li>
+                <li><a href="#" id="value">Value Duets</a></li>
+                <li><a href="#" id="kids">Kids</a></li>
+                <li><a href="#" id="sides">Sides & Spreads</a></li>
+            </ul>
+        </div>
+
+        <div class="menu-container">
+            <div class="subheading"> Popular Picks </div>
+            <div class="block-container">
+                <div class="block">
+                    <img src="https://avatarfiles.alphacoders.com/121/121594.jpg">
+                    <div class="food">Roasted Turkey & Avocado BLT</div>
+                    <div class="price">$9.99+</div>
+                </div>
+                <div class="lastBlock">
+                    <img src="https://avatarfiles.alphacoders.com/121/121594.jpg">
+                    <div class="food">Fuji Apple Salad with Chicken</div>
+                    <div class="price">$9.19+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="sus">
+        <div class="subheading"> Sustainability</div>
+
+        <div class = "metrics">
+            <div class="head3">Distance</div>
+            <p>0.4 mi</p>
+            <div class="head3">Packaging</div>
+            <p>Plastic cutlery</p>
+            <p>Non-recyclable containers</p>
+            <div class="head3">Sourcing</div>
+            <p>California-grown produce</p>
+            <div class="head3">Leftovers</div>
+            <p>No leftovers</p>
+        </div>
+
+        <div id="score">
+            
+        </div>
+        
+    </div>
+
+    <div id="about">
+        <div class="subheading"> About </div>
+        
+    </div>
+
+    <div id="reviews">
+        <div class="subheading"> Reviews </div>
+        
+    </div>
+
+    
+</body>
+</html>

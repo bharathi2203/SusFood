@@ -63,7 +63,7 @@ nav img{
     content:'';
     width: 0%;
     height: 2px;
-    background: rgb(141, 172, 155, 0.75);
+    background: rgba(141, 172, 155, 0.75);
     display: block;
     margin: auto;
     transition: 0.5s;
@@ -89,7 +89,7 @@ nav img{
     height: 35px;
     width: 100%;
     outline: 0;
-    background-color: rgb(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 .search-container button {
     float: right;
@@ -103,75 +103,104 @@ nav img{
 }
 
 .heading{
+    margin-top: 1%;
+    margin-left: 10%;
+    font-family: 'Gaegu', cursive;
+    font-size: 40px;
+    font-weight: bold;
+}
+#banner{
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+}
+#info{
+    margin-bottom: 0.5%;
+    margin-left: 10%;
+    font-family: 'Lato';
+    font-size: 15px;
+}
+
+#tabLinks{
+    margin-left: 9.5%;
+    box-shadow: 0px 30px 100px rgba(0, 0, 0, 0.1);
+}
+/* Style the buttons */
+.tab {
+    border: none;
+    outline: none;
+    padding-right: 2%;
+    background-color:#FFFEF9;
+    cursor: pointer;
+    font-family: 'Gaegu', cursive;
+    font-style: normal;
+    font-size: 22px;
+}
+.tab::after{
+    content:'';
+    width: 0%;
+    height: 2px;
+    background: rgb(141, 172, 155, 0.75);
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+/* Style the active class (and buttons on mouse-over) */
+.tab:hover::after {
+    width: 100%;
+}
+.active::after{
+    width: auto;
+}
+
+.container{
+    width: 100%;
+    height:50%;
+    display: flex;
+    margin-left: 5%;
+}
+
+.subheading{
     margin-top: 3%;
     margin-bottom: 2%;
     margin-left: 10%;
     font-family: 'Gaegu', cursive;
     font-size: 30px;
+    font-weight: bold;
 }
-
-.item-wrapper{
-    display: flex;
-}
-.item{
-    display: inline-block;
-    width: 80px;
-    height: 80px;
-    background-color: #f8f6ee;
-    border-radius: 30px;
-    margin-right: 2.5%;
-}
-.item img {
-    width: 80px;
-    height: 80px;
-    border-radius: 30px;
-    object-fit: cover;
-}
-.carousel-item{
-    display: flex;
-    width: 80px;
-    height: 100px;
-    border-radius: 30px;
-    margin-right: 2.5%;
-    align-items: center;
-    font-family: 'Gaegu';
-}
-.carousel-inner{
-    display:inline-block;
-    border: 10px, solid #8DAC9B;
-    justify-content: center;
-}
-
-.container{
-    text-align: center;
+.block-container{
+    display: inline-flex;
+    margin-left: 10%;
 }
 .block {
     display: inline-block;
-    width: 250px;
-    height: 300px;
-    background-color: #f8f6ee;
+    width: 400px;
+    height: 235px;
+    background-color: #f0ece0;
     border-radius: 30px;
     margin-right: 2.5%;
 }
 .lastBlock{
     display: inline-block;
-    width: 250px;
-    height: 300px;
-    background-color: #f8f6ee;
+    width: 400px;
+    height: 235px;
+    background-color: #f0ece0;
     border-radius: 30px;
 }
 
-.name{
+.food{
     font-family: 'Gaegu', cursive;
     font-size: 22px;
-    font-weight: bold;
     margin-top: 3%;
-    text-align: center;
+    margin-left: 10%;
+    text-align: left;
 }
 
-.description{
+.price{
     margin-top: 0;
     margin-left: 10%;
+    margin-bottom: 3%;
     font-family: 'Lato', sans-serif;
     font-size: 15px;
     color: grey;
@@ -179,7 +208,7 @@ nav img{
 }
 
 .block img {
-    width: 250px;
+    width: 400px;
     height: 150px;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
@@ -187,73 +216,65 @@ nav img{
 }
 
 .lastBlock img {
-    width: 250px;
+    width: 400px;
     height: 150px;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     object-fit: cover;
 }
 
-#outputCards{
-    text-align: center;
-    margin-top: 20px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-.leftIcon{
-    font-size: 25px;
-    margin-right: 35px;
-}
-.rightIcon{
-    font-size: 25px;
-    position: absolute;
-    margin-left: 1225px;
-}
-
-button { all: unset; }
-
-/* animated css */
-.animate__animated.animate__zoomIn{
-    --animate-delay: 1.7s;
-    --animate-duration: 1.2s
-}
-.animate__animated.animate__bounce{
-    --animate-delay: 1s;
-    --animate-duration: 1.5s
-}
-
-.animate__animated.animate__fadeInDown{
-    --animate-delay: 1s;
-    --animate-duration: 1.5s
-}
-
-.animate__animated.animate__fadeInRight
-{
-    --animate-delay: 1s;
-    --animate-duration: 1.5s
-}
-
-
-/* .search-container button:hover {
-background: rgb(255, 255, 255, 0.5);;
-} */
+#menuNavBar {
+    list-style-type: none;
+    margin-left: 10%;
+    /* padding: 0; */
+    width: 200px;
+  }
   
-  /*When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally*/
+  .menu-items li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-family: 'Lato';
 
-  /* @media screen and (max-width: 600px) {
-    .search-container {
-      float: none;
-    }
-    a, input[type=text], .search-container button {
-      float: none;
-      display: block;
-      text-align: left;
-      width: 100%;
-      margin: 0;
-      padding: 14px;
-    }
-    input[type=text] {
-      border: 1px solid #ccc;  
-    }
-  } */
+  }
+  
+  /* Change the link color on hover */
+  .menu-items li a:hover {
+    background-color: #8DAC9B;
+    color: white;
+  }
+
+  #sus{
+    margin-left: 15%;
+  }
+  #about{
+    margin-left: 15%;
+  }
+  #reviews{
+    margin-left: 15%;
+  }
+  .head3{
+    margin-left: 10%;
+    font-family: 'Gaegu';
+    font-size: 24px;
+  }
+  p{
+    margin-left: 15%;
+    font-family: 'Lato';
+    font-size: 18px;
+  }
+  #rating{
+    margin-left: 10%;
+    margin-bottom: 1%;
+  }
+  .checked {
+    color: orange;
+  }
+  #ratePeople{
+    font-family: 'Lato';
+    font-size: '15px';
+    display: inline-block;
+    margin-left: 1%;
+  }
+  
