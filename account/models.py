@@ -2,17 +2,6 @@ from multiprocessing.sharedctypes import Value
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
-# Create your models here.
-class Carousel(models.Model):
-    image = models.ImageField(upload_to = 'pics/%y/%m/%d')
-    title = models.CharField(max_length = 150)
-    sustainability = models.IntegerField(default='10')
-    minutes = models.IntegerField(default='0')
-    price = models.DecimalField(max_digits=5,decimal_places=2,default='0.00')
-    
-    def _str_(self):
-        return self.title
-
 
 class MyAccountManager(BaseUserManager):
 	def create_user(self, email, username, password=None):
@@ -69,7 +58,6 @@ class Account(AbstractBaseUser):
 	# Does this user have permission to view this app? (ALWAYS YES FOR SIMPLICITY)
 	def has_module_perms(self, app_label):
 		return True
-
 
 
 
