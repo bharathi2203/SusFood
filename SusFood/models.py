@@ -16,6 +16,7 @@ class SusMetrics(models.Model):
     packaging = models.CharField(max_length = 300)
     sourcing = models.CharField(max_length = 300)
     leftovers = models.CharField(max_length = 300)
+    score = models.IntegerField(default='0')
 
     def _str_(self):
         return self.title

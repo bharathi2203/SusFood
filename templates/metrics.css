@@ -123,7 +123,7 @@ nav img{
 
 #tabLinks{
     margin-left: 9.5%;
-    box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 30px 100px rgba(0, 0, 0, 0.1);
 }
 /* Style the buttons */
 .tab {
@@ -278,10 +278,3 @@ nav img{
     margin-left: 1%;
   }
   
-  /* Set the size of the div element that contains the map */
-#map {
-    height: 400px;
-    /* The height is 400 pixels */
-    width: 100%;
-    /* The width is the width of the web page */
-  }
