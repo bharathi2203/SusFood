@@ -10,3 +10,12 @@ class Carousel(models.Model):
     
     def _str_(self):
         return self.title
+
+class SusMetrics(models.Model):
+    distance = models.IntegerField(default='1')
+    packaging = models.CharField(max_length = 300)
+    sourcing = models.CharField(max_length = 300)
+    leftovers = models.CharField(max_length = 300)
+
+    def _str_(self):
+        return self.title
