@@ -24,24 +24,25 @@ body{
 }
 nav{
     display: flex;
+    flex-direction: row;
     padding-left: 0%;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     overflow: hidden;
     background: #DCE9E2;
+    height:75px;
 }
 nav img{
     width: 100px;
 }
 .nav-links{
-    flex: 1;
+    /* flex: 1; */
     text-align: right;
     padding-right: 15px;
 }
 .nav-links ul li{
     list-style: none;
-    display: inline-block;
     padding: 8px 12px;
     position: relative;
     font-family: 'Gaegu', cursive;
