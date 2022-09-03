@@ -29,13 +29,15 @@ def compute_sus(restaurant):
 
 """
 """
-def sort_by_sus(arr):
-    new = []
+def sort_by_sus(arr, search):
+    best = []
     d = dict()
     for restaurant in arr:
         s = compute_sus(restaurant)
         restaurant["sus_index"] = s
-        if s in d:
+        if search.lower() in restaurant["Name"].lower():
+            best.append((s, [restaurant]))
+        elif s in d:
             (d[s]).append(restaurant)
         else:
             d[s] = [restaurant]
@@ -43,19 +45,29 @@ def sort_by_sus(arr):
     l = d.items()
     l = list(l)
     l.sort(reverse = True)
-    n = len(l) // 4
+    best.extend(l)
+    n = len(best) // 4
     n = n * 4
-    return l[:n]
+    return best[:n]
 
+def get_distance(og_coords, dest_coords):
+    if og_coords[0] == None or dest_coords[0] == None or og_coords[1] == None or dest_coords[1] == None:
+        return 100
+    return ((og_coords[0] - dest_coords[0])**2 + (og_coords[1] - dest_coords[1])**2)**0.5
 
 """
 use request info from user to query the api and get list of restaurants
 """
 def get_search_results(search_req):
-    search_req = "University Of Pennsylvania"
+    search_req = "University Of Pennsylvania"    
     areaId = nominatim.query(search_req).areaId()
     print (areaId)
-    coords = (39.9522, -75.1932)
+    coordso = (39.9522, -75.1932)
+    qr_main = overpassQueryBuilder(area=areaId, elementType=['node'])
+    qr_main = overpass.query(qr_main)
+    m = qr_main.elements()[0]
+    coords = (m.lat(), m.lon())
+    print(coords) 
 
     query1 = overpassQueryBuilder(area=areaId, elementType=['node', 'way'], selector=['"amenity"~"restaurant"'])
     query2 = overpassQueryBuilder(area=areaId, elementType=['node', 'way'], selector=['"amenity"~"fast_food"'])
@@ -63,11 +75,6 @@ def get_search_results(search_req):
     result1 = overpass.query(query1)
     result2 = overpass.query(query2)
     result3 = overpass.query(query3)
-
-    def get_distance(og_coords, dest_coords):
-        if og_coords[0] == None or dest_coords[0] == None or og_coords[1] == None or dest_coords[1] == None:
-            return 100
-        return ((og_coords[0] - dest_coords[0])**2 + (og_coords[1] - dest_coords[1])**2)**0.5
 
     myDB = []
     for restaurants in result1.elements():
@@ -80,9 +87,9 @@ def get_search_results(search_req):
             cuisine = restaurants.tags()["cuisine"]
         else:
             cuisine = "general"
-        query_string = name + cuisine + "food restaurant"
-        # downloader.download(query_string, limit=1,  output_dir='dataset', 
-        #     adult_filter_off=False, force_replace=False, timeout=200)
+        query_string = name + cuisine + " \"food\" restaurant"
+        downloader.download(query_string, limit=1,  output_dir='dataset', 
+            adult_filter_off=False, force_replace=False, timeout=200)
         picture = "'/Users/swatianshu/Downloads/dataset/" + query_string + "/Image_1.jpg'"
         myDB.append({"Name": name,
                     "rLat": restaurants.lat(),
@@ -100,9 +107,9 @@ def get_search_results(search_req):
             opening_hours = fastFood.tags()["opening_hours"]
         else:
             opening_hours= 'Mo-Su 09:00 - 18:00'
-        query_string = name + "food"
-        # downloader.download(query_string, limit=1,  output_dir='dataset2', 
-        #     adult_filter_off=False, force_replace=False, timeout=200)
+        query_string = name + " \"food\""
+        downloader.download(query_string, limit=1,  output_dir='dataset2', 
+            adult_filter_off=False, force_replace=False, timeout=200)
         picture = "'/Users/swatianshu/Downloads/dataset2/" + query_string + "/Image_1.jpg'"
         myDB.append({"Name": name,
                     "rLat": fastFood.lat(),
@@ -120,9 +127,9 @@ def get_search_results(search_req):
             opening_hours = cafe.tags()["opening_hours"]
         else:
             opening_hours= 'Mo-Su 09:00 - 18:00'
-        query_string = name + " cafe"
-        # downloader.download(query_string, limit=1,  output_dir='dataset3', 
-        #     adult_filter_off=False, force_replace=False, timeout=200)
+        query_string = name + " \"cafe\""
+        downloader.download(query_string, limit=1,  output_dir='dataset3', 
+            adult_filter_off=False, force_replace=False, timeout=200)
         picture = "'/Users/swatianshu/Downloads/dataset3/" + query_string + "/Image_1.jpg'"
         myDB.append({"Name": name,
                     "rLat": cafe.lat(),
@@ -138,7 +145,7 @@ def get_search_results(search_req):
     df.to_csv(r'RestDataBase2.csv', index = True, header = True)
     
     # send message notification 
-    return sort_by_sus(myDB)
+    return sort_by_sus(myDB, search_req)
 
 # map = folium.Map(location= [39.952583, -75.165222], zoom_start = 15)
 # EDIT BELOW 
@@ -171,7 +178,7 @@ map = Map(center = coords, zoom_start = 25)
 print("done")
 map.showMap()
 
-arr = get_search_results("university of Pennsylvania")
+arr = get_search_results("University Of Pennsylvania")
 for x in arr:
     print("\n", x, "\n")
 
