@@ -1,3 +1,6 @@
+import sys 
+print(sys.executable)
+# import networkx as nx
 from json import tool
 import folium
 import webbrowser 
@@ -8,6 +11,8 @@ from bing_image_downloader import downloader
 import os
 import pandas as pd
 import random
+# import osmnx as ox 
+# import scikit-learn 
 
 overpass = Overpass()
 
@@ -16,7 +21,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 nominatim = Nominatim()
 areaId = nominatim.query('University of Pennsylvania').areaId()
 print (areaId)
-coords = (39.9522, -75.1932)
+
 
 query1 = overpassQueryBuilder(area=areaId, elementType=['node', 'way'], selector=['"amenity"~"restaurant"'])
 query2 = overpassQueryBuilder(area=areaId, elementType=['node', 'way'], selector=['"amenity"~"fast_food"'])
@@ -33,9 +38,6 @@ result3 = overpass.query(query3)
 #     print (x.lat())
 #     print (x.lon())
 #     break
-
-def get_distance(og_coords, dest_coords):
-    return ((og_coords[0] - dest_coords[0])**2 + (og_coords[1] - dest_coords[1])**2)**0.5
 
 myDB = []
 for restaurants in result1.elements():
@@ -56,11 +58,7 @@ for restaurants in result1.elements():
                 "rLat": restaurants.lat(),
                 "rLong": restaurants.lon(),
                 "picture": picture, 
-                "opening_hours": opening_hours,
-                "distance": get_distance(coords, (restaurants.lat(), restaurants.lon())),
-                "organic": random.randint(0, 20), 
-                "packaging": random.randint(0, 20), 
-                "leftovers": random.randint(0, 20)  })
+                "opening_hours": opening_hours})
 for fastFood in result2.elements():
     name = fastFood.tags()["name"]
     if "opening_hours" in fastFood.tags():
@@ -75,11 +73,7 @@ for fastFood in result2.elements():
                 "rLat": fastFood.lat(),
                 "rLong": fastFood.lon(),
                 "picture": picture, 
-                "opening_hours": opening_hours,
-                "distance": get_distance(coords, (restaurants.lat(), restaurants.lon())),
-                "organic": random.randint(0, 10), 
-                "packaging": random.randint(0, 20), 
-                "leftovers": random.randint(0, 5) })
+                "opening_hours": opening_hours})
 for cafe in result3.elements():
     name = cafe.tags()["name"]
     picture = None 
@@ -95,15 +89,11 @@ for cafe in result3.elements():
                 "rLat": cafe.lat(),
                 "rLong": cafe.lon(),
                 "picture": picture, 
-                "opening_hours": opening_hours,
-                "distance": get_distance(coords, (restaurants.lat(), restaurants.lon())),
-                "organic": random.randint(0, 20), 
-                "packaging": random.randint(0, 20), 
-                "leftovers": random.randint(0, 20)  })
-print (myDB)
+                "opening_hours": opening_hours})
+# print (myDB)
 
-# df = pd.DataFrame.from_dict(myDB)
-# df.to_csv(r'RestDataBase2.csv', index = True, header = True)
+df = pd.DataFrame.from_dict(myDB)
+df.to_csv(r'RestDataBase2.csv', index = True, header = True)
 # print (df)
 
 # map = folium.Map(location= [39.952583, -75.165222], zoom_start = 15)
@@ -131,50 +121,41 @@ class Map:
         my_map.save("map.html")
         webbrowser.open("map.html")
 
+
 #Define coordinates of where we want to center our map
+ox.config(use_cache=True, log_console=True)
 coords = (39.9522, -75.1932)
 destination= (39.9533602,-75.202905)
 
+
+# G = ox.graph_from_place('Philadelphia, PA, USA', network_type='drive')
+# route = nx.shortest_path(G, G.nodes(coords), G.nodes(destination))
+# fig, ax = ox.plot_graph_route(G, route, route_linewidth=6, node_size=0, bgcolor='k')
+
+
+# place
+place = "Philadelphia, Pennsylvania, United States"
+# mode of travel 
+mode = 'drive'
+# shortest path based on length or time --> THINK ABT THIS
+optimizer = 'length'
+# creating graph from OSM 
+graph = ox.graph_from_point(coords, dist=50000, network_type='drive')
+print("1")
+# # nearest node to the start loc 
+# orig_node = ox.get_nearest_node(graph, coords)
+o_n = ox.nearest_nodes(graph, coords[0], coords[1])
+print("2")
+# # nearest node to the end loc
+d_n = ox.nearest_nodes(graph, destination[0], destination[1])
+print("3")
+# find the shortest path 
+# nodes = ox.graph_to_gdfs(graph, nodes=True, edges=False)
+# edges = ox.graph_to_gdfs(graph, nodes=False, edges=True)
+# graph = graph.to_undirected()
+shortest_route = nx.shortest_path(graph, o_n, d_n, weight=optimizer)
+print(graph)
+shortest_route_map = ox.plot_route_folium(graph, shortest_route)
 map = Map(center = coords, zoom_start = 25)
 print("done")
 map.showMap()
-
-
-
-"""
-use request info from user to query the api and get list of restaurants
-"""
-def get_search_results():
-    return 
-
-
-"""
-"""
-def sort_by_sus(arr):
-    new = []
-    d = dict()
-    for restaurant in arr:
-        if restaurant["sus_index"] in d:
-            d[restaurant["sus_index"]] = d[restaurant["sus_index"]].append(restaurant)
-        else:
-            d[restaurant["sus_index"]] = [restaurant]
-    
-    l = d.items().sorted(reverse = True)
-    return l[:10]
-
-"""
-compute the sustainability index for a 
-"""
-def compute_sus(restaurant):
-    s = 0
-    s += restaurant["distance"]     # out of 40
-    s += restaurant["organic"]      # out of 20
-    s += restaurant["packaging"]    # out of 20
-    s += restaurant["leftovers"]    # out of 20
-
-    restaurant["sus_index"] = s/100
-    return restaurant
-
-print("\n\n SUS SORTED \n\n")
-a = sort_by_sus(myDB)
-print(a)
