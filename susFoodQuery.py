@@ -1,5 +1,6 @@
 import sys 
-print(sys.path)
+print(sys.executable)
+import networkx as nx
 from json import tool
 import folium
 import webbrowser 
@@ -10,8 +11,8 @@ from bing_image_downloader import downloader
 import os
 import pandas as pd
 import random
-
-
+import osmnx as ox 
+# import scikit-learn 
 
 overpass = Overpass()
 
@@ -49,10 +50,10 @@ for restaurants in result1.elements():
         cuisine = restaurants.tags()["cuisine"]
     else:
         cuisine = "fancy"
-    query_string = f'{name} {cuisine} "food" restaurant'
-    downloader.download(query_string, limit=1,  output_dir='dataset', 
-         adult_filter_off=False, force_replace=False, timeout=200)
-    picture = f"~/Downloads/dataset/{query_string}/Image_1.jpg"
+    query_string = name + cuisine + "food restaurant"
+    # downloader.download(query_string, limit=1,  output_dir='dataset', 
+    #     adult_filter_off=False, force_replace=False, timeout=200)
+    picture = "~/Downloads/dataset/" + query_string + "/Image_1.jpg"
     myDB.append({"Name": name,
                 "rLat": restaurants.lat(),
                 "rLong": restaurants.lon(),
@@ -64,10 +65,10 @@ for fastFood in result2.elements():
         opening_hours = fastFood.tags()["opening_hours"]
     else:
         opening_hours= 'Mo-Su 09:00 - 18:00'
-    query_string = f"{name} food"
-    downloader.download(query_string, limit=1,  output_dir='dataset2', 
-        adult_filter_off=False, force_replace=False, timeout=200)
-    picture = f"~/Downloads/dataset/{query_string}/Image_1.jpg"
+    query_string = name + " food"
+    # downloader.download(query_string, limit=1,  output_dir='dataset2', 
+    #     adult_filter_off=False, force_replace=False, timeout=200)
+    picture = "~/Downloads/dataset/" + query_string + "/Image_1.jpg"
     myDB.append({"Name": name,
                 "rLat": fastFood.lat(),
                 "rLong": fastFood.lon(),
@@ -80,10 +81,10 @@ for cafe in result3.elements():
         opening_hours = cafe.tags()["opening_hours"]
     else:
         opening_hours= 'Mo-Su 09:00 - 18:00'
-    query_string = f"{name} 'cafe'"
-    downloader.download(query_string, limit=1,  output_dir='dataset3', 
-         adult_filter_off=False, force_replace=False, timeout=200)
-    picture = f"~/Downloads/dataset/{query_string}/Image_1.jpg"
+    query_string = name + " cafe"
+    # downloader.download(query_string, limit=1,  output_dir='dataset3', 
+    #     adult_filter_off=False, force_replace=False, timeout=200)
+    picture = "~/Downloads/dataset/" + query_string + "/Image_1.jpg"
     myDB.append({"Name": name,
                 "rLat": cafe.lat(),
                 "rLong": cafe.lon(),
@@ -109,21 +110,52 @@ class Map:
         #Display the map
         restDB = pd.read_csv("RestDataBase.csv")
         restloc = restDB.loc[0]
-        colours = ["green", "blue", "red", "pink", "purple", "cadetblue"]
+        colours = ["green", "blue", "red", "pink", "purple", "cyan"]
         for _, x in restDB.iterrows():
             folium.Marker (
             location = [x['rLat'], x['rLong']], popup = x["Name"], 
             tooltip = x['Name'],
             # Fix colours
-            icon = folium.Icon(color = random.choice(colours)), 
-
+            # icon = folium.Icon(color = random(colours)), 
             ).add_to(my_map)
         my_map.save("map.html")
         webbrowser.open("map.html")
 
 
 #Define coordinates of where we want to center our map
-coords = [39.9522, -75.1932]
-map = Map(center = coords, zoom_start = 25)
-map.showMap()
+ox.config(use_cache=True, log_console=True)
+coords = (39.9522, -75.1932)
+destination= (39.9533602,-75.202905)
 
+
+# G = ox.graph_from_place('Philadelphia, PA, USA', network_type='drive')
+# route = nx.shortest_path(G, G.nodes(coords), G.nodes(destination))
+# fig, ax = ox.plot_graph_route(G, route, route_linewidth=6, node_size=0, bgcolor='k')
+
+
+# place
+place = "Philadelphia, Pennsylvania, United States"
+# mode of travel 
+mode = 'drive'
+# shortest path based on length or time --> THINK ABT THIS
+optimizer = 'length'
+# creating graph from OSM 
+graph = ox.graph_from_point(coords, dist=50000, network_type='drive')
+print("1")
+# # nearest node to the start loc 
+# orig_node = ox.get_nearest_node(graph, coords)
+o_n = ox.nearest_nodes(graph, coords[0], coords[1])
+print("2")
+# # nearest node to the end loc
+d_n = ox.nearest_nodes(graph, destination[0], destination[1])
+print("3")
+# find the shortest path 
+# nodes = ox.graph_to_gdfs(graph, nodes=True, edges=False)
+# edges = ox.graph_to_gdfs(graph, nodes=False, edges=True)
+# graph = graph.to_undirected()
+shortest_route = nx.shortest_path(graph, o_n, d_n, weight=optimizer)
+print(graph)
+shortest_route_map = ox.plot_route_folium(graph, shortest_route)
+map = Map(center = coords, zoom_start = 25)
+print("done")
+map.showMap()
