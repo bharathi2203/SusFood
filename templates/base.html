@@ -6,21 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SusFood</title>
     <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <!-- Landing Page -->
-    <section class="header">
-        <!-- Navigation Bar -->
-        <nav>
-            <a href="base.html"><img src="pics/logo.png"></a>
-            <h1 id="Title">SusFood</h1>
-            <div class="nav-links" id="navLinks">
-                <ul>
-                    <li><a href="#">Cart</a></li>
-                    <li><a href="#">Profile</a></li>
-                </ul>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="base.html"><img src="pics/logo.png"></a>
+        <div id="Title"><a href="base.html">SusFood</a></div>
+        <div class="search-container">
+            <form action="/action_page.php">
+                <input class="search" type="text" placeholder="Search for some sus food..." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <ul>
+                <li><a><img src="pics/shopping-cart.png" id="navIcon"></a></li>
+                <li><a><img src="pics/user.png" id="navIcon"></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Carousel -->
+    <div id="carousel">
+
+    </div>
+
+    <!-- Restaurant Widgets -->
+    <section id="restaurants">
+        <div class="heading"> Some Sus Picks </div>
+        <div class="container">
+            <div class="block">
+              <img src="https://avatarfiles.alphacoders.com/121/121594.jpg">
+              <div class="name">Panera Bread</div>
+              <div class="description">Some text</div>
             </div>
-        </nav>
+            <div class="block">
+              <img src="https://avatarfiles.alphacoders.com/121/121594.jpg">
+              <div class="name">Tsaocaa</div>
+              <div class="description">Some text</div>
+            </div>
+            <div class="block">
+              <img src="https://avatarfiles.alphacoders.com/121/121594.jpg">
+              <div class="name">Sorrento Pizzeria & Grill</div>
+              <div class="description">Some text</div>
+            </div>
+            <div class="lastBlock">
+                <img src="https://avatarfiles.alphacoders.com/121/121594.jpg">
+                <div class="name">Southside Pizzeria</div>
+                <div class="description">Some text</div>
+              </div>
+          </div> 
     </section>
 </body>
 </html>
