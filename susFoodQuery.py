@@ -1,4 +1,5 @@
-
+import sys 
+print(sys.path)
 from json import tool
 import folium
 import webbrowser 
@@ -9,7 +10,6 @@ from bing_image_downloader import downloader
 import os
 import pandas as pd
 import random
-
 
 
 
@@ -50,8 +50,8 @@ for restaurants in result1.elements():
     else:
         cuisine = "fancy"
     query_string = f'{name} {cuisine} "food" restaurant'
-    # downloader.download(query_string, limit=1,  output_dir='dataset', 
-    #     adult_filter_off=False, force_replace=False, timeout=200)
+    downloader.download(query_string, limit=1,  output_dir='dataset', 
+         adult_filter_off=False, force_replace=False, timeout=200)
     picture = f"~/Downloads/dataset/{query_string}/Image_1.jpg"
     myDB.append({"Name": name,
                 "rLat": restaurants.lat(),
@@ -65,8 +65,8 @@ for fastFood in result2.elements():
     else:
         opening_hours= 'Mo-Su 09:00 - 18:00'
     query_string = f"{name} food"
-    # downloader.download(query_string, limit=1,  output_dir='dataset2', 
-    #     adult_filter_off=False, force_replace=False, timeout=200)
+    downloader.download(query_string, limit=1,  output_dir='dataset2', 
+        adult_filter_off=False, force_replace=False, timeout=200)
     picture = f"~/Downloads/dataset/{query_string}/Image_1.jpg"
     myDB.append({"Name": name,
                 "rLat": fastFood.lat(),
@@ -81,8 +81,8 @@ for cafe in result3.elements():
     else:
         opening_hours= 'Mo-Su 09:00 - 18:00'
     query_string = f"{name} 'cafe'"
-    # downloader.download(query_string, limit=1,  output_dir='dataset3', 
-    #     adult_filter_off=False, force_replace=False, timeout=200)
+    downloader.download(query_string, limit=1,  output_dir='dataset3', 
+         adult_filter_off=False, force_replace=False, timeout=200)
     picture = f"~/Downloads/dataset/{query_string}/Image_1.jpg"
     myDB.append({"Name": name,
                 "rLat": cafe.lat(),
@@ -109,13 +109,13 @@ class Map:
         #Display the map
         restDB = pd.read_csv("RestDataBase.csv")
         restloc = restDB.loc[0]
-        colours = ["green", "blue", "red", "pink", "purple", "cyan"]
+        colours = ["green", "blue", "red", "pink", "purple", "cadetblue"]
         for _, x in restDB.iterrows():
             folium.Marker (
             location = [x['rLat'], x['rLong']], popup = x["Name"], 
             tooltip = x['Name'],
             # Fix colours
-            icon = folium.Icon(color = random(colours)), 
+            icon = folium.Icon(color = random.choice(colours)), 
 
             ).add_to(my_map)
         my_map.save("map.html")
@@ -126,3 +126,4 @@ class Map:
 coords = [39.9522, -75.1932]
 map = Map(center = coords, zoom_start = 25)
 map.showMap()
+
