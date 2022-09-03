@@ -35,6 +35,8 @@ result3 = overpass.query(query3)
 #     break
 
 def get_distance(og_coords, dest_coords):
+    if og_coords[0] == None or dest_coords[0] == None or og_coords[1] == None or dest_coords[1] == None:
+        return 100
     return ((og_coords[0] - dest_coords[0])**2 + (og_coords[1] - dest_coords[1])**2)**0.5
 
 myDB = []
@@ -145,6 +147,11 @@ map.showMap()
 use request info from user to query the api and get list of restaurants
 """
 def get_search_results():
+    #
+    #
+    #
+    #
+    # send message notification 
     return 
 
 
@@ -154,27 +161,33 @@ def sort_by_sus(arr):
     new = []
     d = dict()
     for restaurant in arr:
-        if restaurant["sus_index"] in d:
-            d[restaurant["sus_index"]] = d[restaurant["sus_index"]].append(restaurant)
+        s = compute_sus(restaurant)
+        restaurant["sus_index"] = s
+        if s in d:
+            (d[s]).append(restaurant)
         else:
-            d[restaurant["sus_index"]] = [restaurant]
+            d[s] = [restaurant]
     
-    l = d.items().sorted(reverse = True)
-    return l[:10]
+    l = d.items()
+    l = list(l)
+    l.sort(reverse = True)
+    n = len(l) // 4
+    n = n * 4
+    return l[:n]
 
 """
 compute the sustainability index for a 
 """
 def compute_sus(restaurant):
     s = 0
-    s += restaurant["distance"]     # out of 40
+    s += max(5, (100 - 10*restaurant["distance"])) * 0.4    # out of 40
+
     s += restaurant["organic"]      # out of 20
     s += restaurant["packaging"]    # out of 20
     s += restaurant["leftovers"]    # out of 20
-
-    restaurant["sus_index"] = s/100
-    return restaurant
+    return int(s)
 
 print("\n\n SUS SORTED \n\n")
 a = sort_by_sus(myDB)
-print(a)
+for x in a:
+    print(x)
