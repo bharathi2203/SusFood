@@ -1,0 +1,26 @@
+*{
+    margin: 0 px;
+    padding: 0 px;
+    box-sizing: border-box;
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    justify-content: space-around;
+    width: 30%;
+    font-family: "Gaegu";
+    font-size: 70px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10%;
+    font-family: "Gaegu";
+    background-color: #CFE1C9;
+}
