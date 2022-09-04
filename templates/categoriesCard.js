@@ -42,7 +42,6 @@ var leftButton2 = document.getElementById('leftIcon2')
 var rightButton2 = document.getElementById('rightIcon2')
 
 leftButton2.onclick = function(){
-    console.log("clicked!!")
     for(var i = offset2; i < endoffset2; i ++){
         document.getElementById("food".concat(String(i))).remove()
     }
@@ -52,7 +51,6 @@ leftButton2.onclick = function(){
 }
 
 rightButton2.onclick = function(){
-    console.log("clicked!!")
     for(var i = offset2; i < endoffset2; i ++){
         document.getElementById("food".concat(String(i))).remove()
     }

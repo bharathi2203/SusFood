@@ -239,6 +239,16 @@ button { all: unset; }
     flex-direction: row;
 }
 
+#susImg{
+    width:75px;
+    height:75px;
+}
+
+.score{
+    font-family: 'Gaegu', cursive;
+    font-size: 20px;
+}
+
 /* animated css */
 .animate__animated.animate__zoomIn{
     --animate-delay: 1.7s;
