@@ -53,6 +53,12 @@ def get_distance(og_coords, dest_coords):
         return 100
     return ((og_coords[0] - dest_coords[0])**2 + (og_coords[1] - dest_coords[1])**2)**0.5
 
+def combine(arr):
+    new = []
+    for a, x in arr:
+        new.extend(x)
+    return new 
+
 """
 use request info from user to query the api and get list of restaurants
 """
@@ -153,7 +159,11 @@ def get_search_results(search_req):
     # df.to_csv(r'RestDataBase2.csv', index = True, header = True)
     
     # send message notification 
-    return sort_by_sus(myDB, search_req)
+    sor = sort_by_sus(myDB, search_req)
+    final = combine(sor)
+    df = pd.DataFrame.from_dict(final)
+    df.to_csv(r'sortedUPennDB.csv', index = True, header = True)
+    return final
 
 # map = folium.Map(location= [39.952583, -75.165222], zoom_start = 15)
 # EDIT BELOW 
