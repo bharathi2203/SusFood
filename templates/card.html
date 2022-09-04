@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for foodCard in foodCards %}
+
+    <div class= "block" id=$`{{ forloop.counter0 }}`>
+        <div>{{ forloop.counter0 }}</div>
+        <img src=$`{{foodCard.image}}`>
+        <div class = "name">
+            {{foodCard.title}}
+        </div>
+        <div class="description">{{foodCard.description}}</div>
+    </div>
+    {% endfor %}
+{% endblock content%}
