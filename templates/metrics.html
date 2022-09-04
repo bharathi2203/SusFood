@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- animate css link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -42,11 +41,13 @@
         <div id="ratePeople">623 ratings</div>
     </div>
 
-    <div id="tabLinks">
-        <a href="#menuLinks"><button class="tab">Menu</button></a>
-        <a href="#sus"><button class="tab">Sustainability</button></a>
-        <a href="#about"><button class="tab">About</button></a>
-        <a href="#reviews"><button class="tab">Reviews</button></a>
+    <div class="tab-container">
+        <div class="tabLinks">
+            <a href="#menuLinks"><button class="tab">Menu</button></a>
+            <a href="#sus"><button class="tab">Sustainability</button></a>
+            <a href="#about"><button class="tab">About</button></a>
+            <a href="#reviews"><button class="tab">Reviews</button></a>
+        </div>
     </div>
 
     <script>
@@ -75,8 +76,9 @@
     <div class="container">
         <div class="menu-items" id="menuLinks">
             <ul id="menuNavBar">
-                <li><a href="#" id="sandwiches">Sandwiches</a></li>
-                <li><a href="#" id="salads">Salads</a></li>
+                <li><a href="#sandwiches">Sandwiches</a></li>
+                <li><a href="#pick2">You Pick 2</a></li>
+                <li><a href="#salads">Salads</a></li>
                 <li><a href="#" id="soups">Soups & Mac</a></li>
                 <li><a href="#" id="pizza">Pizza</a></li>
                 <li><a href="#" id="bakery">Bakery</a></li>
@@ -92,50 +94,274 @@
             <div class="subheading"> Popular Picks </div>
             <div class="block-container">
                 <div class="block">
-                    <img src="https://avatarfiles.alphacoders.com/121/121594.jpg">
+                    <img src="pics/RTurkeyBlt.jpg">
                     <div class="food">Roasted Turkey & Avocado BLT</div>
                     <div class="price">$9.99+</div>
                 </div>
                 <div class="lastBlock">
-                    <img src="https://avatarfiles.alphacoders.com/121/121594.jpg">
+                    <img src="pics/AppleCS.jpg">
                     <div class="food">Fuji Apple Salad with Chicken</div>
                     <div class="price">$9.19+</div>
                 </div>
             </div>
+
+            <div class="subheading" id="sandwiches">Sandwiches </div>
+            <div class="block-container">
+                <div class="block">
+                    <img src="pics/ChipotleCaAv.jpg">
+                    <div class="food">Chipotle Chicken Avocado Melt</div>
+                    <div class="price">$9.29+</div>
+                </div>
+                <div class="lastBlock">
+                    <img src="pics/SigCS.jpg">
+                    <div class="food">Signature Chicken Sandwich</div>
+                    <div class="price">$13.69+</div>
+                </div>
+            </div>
+            <div class="block-container">
+                <div class="block">
+                    <img src="pics/SpicyCS.jpg">
+                    <div class="food">Spicy Chicken Sandwich</div>
+                    <div class="price">$13.69+</div>
+                </div>
+                <div class="lastBlock">
+                    <img src="pics/GrilledCheese.jpg">
+                    <div class="food">Grilled Cheese</div>
+                    <div class="price">$6.49+</div>
+                </div>
+            </div>
+            <div class="block-container">
+                <div class="block">
+                    <img src="pics/M&C.jpg">
+                    <div class="food">Grilled Mac & Cheese Sandwich</div>
+                    <div class="price">$9.99+</div>
+                </div>
+                <div class="lastBlock">
+                    <img src="pics/RTurkeyBlt.jpg">
+                    <div class="food">Roasted Turkey & Avocado BLT</div>
+                    <div class="price">$9.99+</div>
+                </div>
+            </div>
+
+            <div class="subheading" id="pick2">You Pick 2 </div>
+            <div class="block-container">
+                <div class="block">
+                    <img src="pics/SandSal.jpg">
+                    <div class="food">Sandwich & Salad</div>
+                    <div class="price">$11.48+</div>
+                </div>
+                <div class="lastBlock">
+                    <img src="pics/BowlSoup.jpg">
+                    <div class="food">Warm Bowl & Warm Bowl</div>
+                    <div class="price">$21.78+</div>
+                </div>
+            </div>
+            <div class="block-container">
+                <div class="block">
+                    <img src="pics/flatbreadSal.jpg">
+                    <div class="food">Flatbread Pizza & Salad</div>
+                    <div class="price">$14.88+</div>
+                </div>
+                <div class="lastBlock">
+                    <img src="pics/BowlSand.jpg">
+                    <div class="food">Warm Bowl & Sandwich</div>
+                    <div class="price">$16.58+</div>
+                </div>
+            </div>
+            <div class="block-container">
+                <div class="block">
+                    <img src="pics/Pizza2.jpg">
+                    <div class="food">Flatbread Pizza & Flatbread Pizza</div>
+                    <div class="price">$18.18+</div>
+                </div>
+                <div class="lastBlock">
+                    <img src="pics/Sand2.jpg">
+                    <div class="food">Sandwich & Sandwich</div>
+                    <div class="price">$11.38+</div>
+                </div>
+            </div>
+
+            <div class="subheading" id="salads">Salads </div>
+            <div class="block-container">
+                <div class="block">
+                    <img src="pics/CobbS.jpg">
+                    <div class="food">Green Goddess Cobb Salad</div>
+                    <div class="price">$10.49+</div>
+                </div>
+                <div class="lastBlock">
+                    <img src="pics/bbqCS.jpg">
+                    <div class="food">Bbq Chicken Salad</div>
+                    <div class="price">$9.19+</div>
+                </div>
+            </div>
+            <div class="block-container">
+                <div class="block">
+                    <img src="pics/CAsianS.jpg">
+                    <div class="food">Citrus Asian Crunch Salad</div>
+                    <div class="price">$10.49+</div>
+                </div>
+                <div class="lastBlock">
+                    <img src="pics/GreekS.png">
+                    <div class="food">Greek Salad</div>
+                    <div class="price">$7.09+</div>
+                </div>
+            </div>
+            <div class="block-container">
+                <div class="block">
+                    <img src="pics/AsSesameCS.jpg">
+                    <div class="food">Asian Sesame Salad with Chicken</div>
+                    <div class="price">$9.19+</div>
+                </div>
+                <div class="lastBlock">
+                    <img src="pics/AppleCS.jpg">
+                    <div class="food">Fuji Apple Salad with Chicken</div>
+                    <div class="price">$9.19+</div>
+                </div>
+            </div>
+
         </div>
     </div>
 
     <div id="sus">
-        <div class="subheading"> Sustainability</div>
-
-        <div class = "metrics">
-            <div class="head3">Distance</div>
-            <p>0.4 mi</p>
-            <div class="head3">Packaging</div>
-            <p>Plastic cutlery</p>
-            <p>Non-recyclable containers</p>
-            <div class="head3">Sourcing</div>
-            <p>California-grown produce</p>
-            <div class="head3">Leftovers</div>
-            <p>No leftovers</p>
+        <div class="subheading-container">
+            <div class="subheading" id="sustain">Sustainability</div>
         </div>
+        <div class="sus-container">
+            <div class = "metrics">
+                <div class="metric-container">
+                    <div class="distance-container">
+                        <div class="head3">Distance</div>
+                        <div class="popup" onclick="myFunction('distance-info')">
+                            <span class="fa fa-info-circle" id="info-circle"></span>
+                            <span class="popuptext" id="distance-info">
+                                The carbon footprint of gasoline-powered vehicles contributes 
+                                to the deterioration of the ozone layer and accelerates climate change.
+                                Consider buying from eateries nearest to you!
+                            </span>
+                        </div>
+                    </div>
+                    <div class="sus-metric" id="distance-rating">
+                        <span class="fa fa-leaf checked"></span>
+                        <span class="fa fa-leaf checked"></span>
+                        <span class="fa fa-leaf checked"></span>
+                        <span class="fa fa-leaf checked"></span>
+                        <span class="fa fa-leaf"></span>
+                    </div>
+                </div>
+                <p>0.4 mi</p>
 
-        <div id="score">
+                <div class="metric-container">
+                    <div class="packaging-container">
+                        <div class="head3">Packaging</div>
+                        <div class="popup" onclick="myFunction('packaging-info')">
+                            <span class="fa fa-info-circle" id="info-circle"></span>
+                            <span class="popuptext" id="packaging-info">
+                                Plastic utensils and excessive non-recyclable packaging feed
+                                into the global issue of improperly disposed/recycled plastics making their way
+                                into our oceans and polluting our water sources.
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="sus-metric" id="packaging-rating">
+                        <span class="fa fa-leaf checked"></span>
+                        <span class="fa fa-leaf checked"></span>
+                        <span class="fa fa-leaf checked"></span>
+                        <span class="fa fa-leaf checked"></span>
+                        <span class="fa fa-leaf"></span>
+                    </div>
+                </div>
+                <p>Plastic cutlery</p>
+                <p>Non-recyclable containers</p>
+
+                <div class="metric-container">
+                    <div class="sourcing-container">
+                        <div class="head3">Sourcing</div>
+                        <div class="popup" onclick="myFunction('sourcing-info')">
+                            <span class="fa fa-info-circle" id="info-circle"></span>
+                            <span class="popuptext" id="sourcing-info">
+                                Imported products from across the country or even across the globe
+                                 drastically increase the carbon footprint of our everyday food purchases. Consider 
+                                 buying from eateries that source from local farmers markets and sellers!
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="sus-metric" id="sourcing-rating">
+                        <span class="fa fa-leaf checked"></span>
+                        <span class="fa fa-leaf checked"></span>
+                        <span class="fa fa-leaf checked"></span>
+                        <span class="fa fa-leaf checked"></span>
+                        <span class="fa fa-leaf"></span>
+                    </div>
+                </div>
+                <p>California-grown produce</p>
+
+                <div class="metric-container">
+                    <div class="leftovers-container">
+                        <div class="head3">Leftovers</div>
+                        <div class="popup" onclick="myFunction('leftovers-info')">
+                            <span class="fa fa-info-circle" id="info-circle"></span>
+                            <span class="popuptext" id="leftovers-info">
+                                Buying restaurant leftovers at a discounted price is much more 
+                                sustainable than these businesses simply discarding them. Consider 
+                                buying from businesses that sell leftovers to help reduce food waste!
+                            </span>
+                        </div>
+                    </div>
             
-        </div>
-        
+                    <div class="sus-metric" id="leftovers-rating">
+                        <span class="fa fa-leaf checked"></span>
+                        <span class="fa fa-leaf checked"></span>
+                        <span class="fa fa-leaf checked"></span>
+                        <span class="fa fa-leaf checked"></span>
+                        <span class="fa fa-leaf"></span>
+                    </div>
+                </div>
+                <p>No leftovers</p>
+            </div>
+
+            <script>
+                // When the user clicks on div, open the popup
+                function myFunction(popup_id) {
+                  var popup = document.getElementById(popup_id);
+                  popup.classList.toggle("show");
+                }
+            </script>
+
+            <div class="score-container">
+                <!-- <img src="pics/score.png" id="scorePic"> -->
+                <p id="susScore">82</p>
+            </div>
+        </div>   
     </div>
 
     <div id="about">
         <div class="subheading"> About </div>
-        
+        <p>Hours</p>
+        <p>Price Range</p>
+        <p>Address</p>
+        <p>Distance</p>
+        <p>Map</p>
     </div>
 
+    <div class="subheading" style="margin-left: 23.5%"> Reviews </div>
     <div id="reviews">
-        <div class="subheading"> Reviews </div>
         
+        <div class="review-container">
+            <p class="person"> Gloria</p>
+            <p class="comment"> Great healthy food and fresh. Very tasty </p>
+        </div>
+        <div class="last-review-container">
+            <p class="person"> Betty</p>
+            <p class="comment"> This was my first time having a Panera soup and my only <br> 
+                question is what took so long? It was delicious. The cookie <br> was good, too. Nice and soft. Will definitely be ordering <br> again. </p>
+        </div>
     </div>
 
+    <div class="leaf-pile">
+        <p id="coins">213</p>
+    </div>
     
 </body>
 </html>
