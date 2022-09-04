@@ -267,17 +267,17 @@
   },
   {
     "": 19,
-    "Name": "Baby Blues BBQ",
-    "rLat": "",
-    "rLong": "",
-    "img": "https://images.pexels.com/photos/3997609/pexels-photo-3997609.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "Name": "Panera Bread",
+    "rLat": 39.9539597,
+    "rLong": -75.2029124,
+    "img": "https://images.pexels.com/photos/1213710/pexels-photo-1213710.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "cuisine": "General",
     "opening_hours": "Mo-Su 09:00 - 18:00",
     "distance": 100,
-    "organic": 13,
-    "packaging": 13,
-    "leftovers": 2,
-    "sus_index": 30
+    "organic": 7,
+    "packaging": 3,
+    "leftovers": 5,
+    "sus_index": 17
   },
   {
     "": 20,
