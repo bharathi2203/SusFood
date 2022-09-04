@@ -8,6 +8,7 @@ from bing_image_downloader import downloader
 import os
 import pandas as pd
 import random
+import chat 
 
 overpass = Overpass()
 
@@ -163,6 +164,7 @@ def get_search_results(search_req):
     final = combine(sor)
     df = pd.DataFrame.from_dict(final)
     df.to_csv(r'sortedUPennDB.csv', index = True, header = True)
+    chat.send_notif("Your order has been placed.")
     return final
 
 # map = folium.Map(location= [39.952583, -75.165222], zoom_start = 15)
