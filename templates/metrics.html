@@ -228,8 +228,8 @@
         </div>
         <div class="sus-container">
             <div class = "metrics">
-                <div class="metric-container">
-                    <div class="distance-container">
+                <div class="metric-container" id="metricContainer">
+                    <div class="distance-container" id="distanceContainer">
                         <div class="head3">Distance</div>
                         <div class="popup" onclick="myFunction('distance-info')">
                             <span class="fa fa-info-circle" id="info-circle"></span>
@@ -240,15 +240,17 @@
                             </span>
                         </div>
                     </div>
+                    <!-- <script src = "distance.js" type ="module"></script> -->
                     <div class="sus-metric" id="distance-rating">
                         <span class="fa fa-leaf checked"></span>
                         <span class="fa fa-leaf checked"></span>
                         <span class="fa fa-leaf checked"></span>
-                        <span class="fa fa-leaf checked"></span>
+                        <span class="fa fa-leaf"></span>
                         <span class="fa fa-leaf"></span>
                     </div>
                 </div>
-                <p>0.4 mi</p>
+                <!-- <script src = "distance.js" type ="module"></script> -->
+                <p class="metric" id="distance">0.64 mi</p>
 
                 <div class="metric-container">
                     <div class="packaging-container">
@@ -266,8 +268,8 @@
                     <div class="sus-metric" id="packaging-rating">
                         <span class="fa fa-leaf checked"></span>
                         <span class="fa fa-leaf checked"></span>
-                        <span class="fa fa-leaf checked"></span>
-                        <span class="fa fa-leaf checked"></span>
+                        <span class="fa fa-leaf"></span>
+                        <span class="fa fa-leaf"></span>
                         <span class="fa fa-leaf"></span>
                     </div>
                 </div>
@@ -290,8 +292,8 @@
                     <div class="sus-metric" id="sourcing-rating">
                         <span class="fa fa-leaf checked"></span>
                         <span class="fa fa-leaf checked"></span>
-                        <span class="fa fa-leaf checked"></span>
-                        <span class="fa fa-leaf checked"></span>
+                        <span class="fa fa-leaf"></span>
+                        <span class="fa fa-leaf"></span>
                         <span class="fa fa-leaf"></span>
                     </div>
                 </div>
@@ -312,9 +314,9 @@
             
                     <div class="sus-metric" id="leftovers-rating">
                         <span class="fa fa-leaf checked"></span>
-                        <span class="fa fa-leaf checked"></span>
-                        <span class="fa fa-leaf checked"></span>
-                        <span class="fa fa-leaf checked"></span>
+                        <span class="fa fa-leaf"></span>
+                        <span class="fa fa-leaf"></span>
+                        <span class="fa fa-leaf"></span>
                         <span class="fa fa-leaf"></span>
                     </div>
                 </div>
@@ -338,11 +340,14 @@
 
     <div id="about">
         <div class="subheading"> About </div>
-        <p>Hours</p>
-        <p>Price Range</p>
-        <p>Address</p>
-        <p>Distance</p>
-        <p>Map</p>
+        <p style="margin-left: 10%"><u style="font-weight: bold">Hours</u></p>
+        <p style="margin-left: 10%">Delivery: 7:00am–8:30pm, Mon-Sat</p>
+        <p style="margin-left: 10%">Pickup: 7:00am–8:30pm, Mon-Sat</p>
+        <p style="margin-left: 10%"><u style="font-weight: bold">Price Range</u></p>
+        <p style="display: inline-block; margin-left: 10%">$$</p><p style="color: gray; display: inline-block; margin-left:-1px;">$$</p>
+        <p style="margin-left: 10%"><u style="font-weight: bold">Address</u></p>
+        <p style="margin-left: 10%"> 200 S 40th St <br>
+            Philadelphia, PA 19104</p>
     </div>
 
     <div class="subheading" style="margin-left: 23.5%"> Reviews </div>
