@@ -3,8 +3,8 @@ from .models import Carousel
 
 # Create your views here.
 def homeScreenView(request):
-    obj = Carousel.objects.all()
-    context ={
-        'obj' : obj
-    }
-    return render(request, "base.html", context)
+    foodCards = Carousel.objects.all()
+    print(foodCards)
+   
+    return render(request, "base.html", {'foodCards' : foodCards})
+
