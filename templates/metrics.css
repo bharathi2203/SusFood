@@ -30,6 +30,7 @@ nav{
     width: 100%;
     overflow: hidden;
     background: #DCE9E2;
+    position: fixed;
 }
 nav img{
     width: 100px;
@@ -111,7 +112,7 @@ nav img{
 }
 #banner{
     width: 100%;
-    height: 30vh;
+    height: 45vh;
     object-fit: cover;
 }
 #info{
@@ -120,10 +121,15 @@ nav img{
     font-family: 'Lato';
     font-size: 15px;
 }
-
-#tabLinks{
+.tab-container{
+    box-shadow: 0 4px 2px -2px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 100px;
+    background-color: #FFFEF9;
+}
+.tabLinks{
     margin-left: 9.5%;
-    box-shadow: 0px 30px 100px rgba(0, 0, 0, 0.1);
+    padding-bottom: 10px;
 }
 /* Style the buttons */
 .tab {
@@ -153,7 +159,6 @@ nav img{
 .active::after{
     width: auto;
 }
-
 .container{
     width: 100%;
     height:50%;
@@ -169,14 +174,30 @@ nav img{
     font-size: 30px;
     font-weight: bold;
 }
+#sustain{
+    padding-top: 25px;
+    padding-left: 33px;
+    color: white;
+}
+.subheading-container{
+    background-image: url('pics/long_leaf.png');
+    width: 270px;
+    height: 90px;
+    position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 7%;
+
+}
 .block-container{
     display: inline-flex;
     margin-left: 10%;
+    margin-bottom: 2%;
 }
 .block {
     display: inline-block;
     width: 400px;
-    height: 235px;
+    height: 100px;
     background-color: #f0ece0;
     border-radius: 30px;
     margin-right: 2.5%;
@@ -184,7 +205,7 @@ nav img{
 .lastBlock{
     display: inline-block;
     width: 400px;
-    height: 235px;
+    height: 100;
     background-color: #f0ece0;
     border-radius: 30px;
 }
@@ -208,73 +229,229 @@ nav img{
 }
 
 .block img {
-    width: 400px;
-    height: 150px;
-    border-top-left-radius: 30px;
+    width: 100px;
+    height: 100px;
+    border-bottom-right-radius: 30px;
     border-top-right-radius: 30px;
     object-fit: cover;
+    float: right;
 }
 
 .lastBlock img {
-    width: 400px;
-    height: 150px;
-    border-top-left-radius: 30px;
+    width: 100px;
+    height: 100px;
+    border-bottom-right-radius: 30px;
     border-top-right-radius: 30px;
     object-fit: cover;
+    float: right;
 }
 
 #menuNavBar {
     list-style-type: none;
     margin-left: 10%;
-    /* padding: 0; */
     width: 200px;
+    background: #FFFEF9;
   }
   
-  .menu-items li a {
+.menu-items li a {
     display: block;
     color: #000;
     padding: 8px 16px;
     text-decoration: none;
     font-family: 'Lato';
-
-  }
+}
   
   /* Change the link color on hover */
-  .menu-items li a:hover {
+.menu-items li a:hover {
     background-color: #8DAC9B;
     color: white;
-  }
+}
 
-  #sus{
+#sus{
     margin-left: 15%;
-  }
-  #about{
+}
+.sus-container{
+    display: flex;
+}
+.metrics{
+    margin-left: 5%;
+    width: 45%;
+}
+.sus-metric{
+    float: right;
+}
+.sus-metric .checked{
+    color:#8dac9b;
+}
+.metric-container{
+    display: right;
+    margin-right: 10%;
+}
+.score-container{
+    width: 510px;
+    height: 400px;
+    float: right;
+    background-image: url('pics/score.png');
+    height: 50%;
+    position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#susScore{
+    font-family: 'Gaegu';
+    font-weight: bolder;
+    font-size: 100px;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    padding-right: 40px;
+}
+.distance-container{
+    display: flex;
+}
+.packaging-container{
+    display: flex;
+}
+.sourcing-container{
+    display: flex;
+}
+.leftovers-container{
+    display: flex;
+}
+
+#about{
     margin-left: 15%;
-  }
-  #reviews{
+}
+#reviews{
     margin-left: 15%;
-  }
-  .head3{
+    display: flex;
+}
+.head3{
     margin-left: 10%;
     font-family: 'Gaegu';
     font-size: 24px;
-  }
-  p{
+}
+
+p{
     margin-left: 15%;
     font-family: 'Lato';
     font-size: 18px;
-  }
-  #rating{
+}
+#rating{
     margin-left: 10%;
     margin-bottom: 1%;
-  }
-  .checked {
+}
+#rating .checked {
     color: orange;
-  }
-  #ratePeople{
+}
+#ratePeople{
     font-family: 'Lato';
     font-size: '15px';
     display: inline-block;
     margin-left: 1%;
+}
+#coins{
+    font-family: 'Gaegu';
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    padding-left: 15px;
+    padding-top: -5px;
+}
+.leaf-pile{
+    background-image: url('pics/large_pile.png');
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: -3%;
+}
+
+.review-container{
+    margin-left: 6%;
+    background-image: url('pics/leaf_frame.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 500px;
+    height: 400px;
+}
+.last-review-container{
+    margin-left: 1%;
+    background-image: url('pics/leaf_frame.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 500px;
+    height: 400px;
+}
+.person{
+    font-family: 'Gaegu';
+    font-size: 30px;
+    align-self: center;
+    padding-top: 40px;
+    padding-left: 150px;
+}
+.comment{
+    font-family: 'Lato';
+    font-size: 15px;
+    align-self: center;
+}
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
   
+  /* The actual popup */
+  .popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: rgba(42, 73, 57, 0.9);
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+    font-family: 'Lato';
+    font-size: 14px;
+  }
+  
+  /* Popup arrow */
+  .popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  /* Toggle this class - hide and show the popup */
+  .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
