@@ -29,10 +29,11 @@ function getCardz (){
         div.className = "categoryContainer";
         div.id = "food" + String(i);
         div.innerHTML = 
-        `<img class = foodIconImg src="${foodCategories[i].img}">
+        `<a href="metrics.html"><img class = foodIconImg src="${foodCategories[i].img}">
             <div class = "cuisine">
                 ${foodCategories[i].cuisine}
-            </div>`
+            </div>
+            </a>`
 
         document.getElementById('foodCategories').append(div)
     }

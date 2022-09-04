@@ -77,11 +77,11 @@ function getCards (){
         let div = document.createElement('div')
         div.className = "block";
         div.id = i;
-        div.innerHTML = `<img src=${cardsData[i].img}}>
+        div.innerHTML = `<a href="metrics.html">
+        <img src=${cardsData[i].img}}>
             <div class = "name">
                 ${cardsData[i].Name}
-            </div>` + getTier(cardsData[i].sus_index)
-            // <div class="description">Sustainability Score: ${cardsData[i].sus_index}</div>
+            </div> </a>` + getTier(cardsData[i].sus_index)
 
         document.getElementById('outputCards').append(div)
     }

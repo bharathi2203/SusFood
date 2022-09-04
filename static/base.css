@@ -32,23 +32,24 @@ body{
 nav{
     display: flex;
     padding-left: 0%;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     overflow: hidden;
     background: #DCE9E2;
-    height:75px;
 }
 nav img{
     width: 100px;
 }
 .nav-links{
-    position: absolute;
-    padding-top: 220px;
-    padding-left: 20px;
+    flex: 1;
+    text-align: right;
+    padding-right: 15px;
 }
 .nav-links ul li{
     list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
     position: relative;
     font-family: 'Gaegu', cursive;
     font-style: normal;
@@ -62,6 +63,7 @@ nav img{
     font-size: 25px;
     font-family: 'Gaegu', cursive;
     font-weight: 300;
+    align-items: flex-end;
 }
 .nav-links ul li::after{
     content:'';
@@ -77,9 +79,7 @@ nav img{
 }
 
 .search-container {
-    position: absolute;
-    text-align: center;
-    align-self: center;
+    float:right;
 }
 .search-container input[type=text] {
     padding: 6px;
