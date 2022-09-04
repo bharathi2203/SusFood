@@ -196,23 +196,27 @@ nav img{
 .leftIcon{
     font-size: 25px;
     margin-right: 35px;
+    color: rgb(109, 106, 106);
 }
 .rightIcon{
     font-size: 25px;
     position: absolute;
     margin-left: 1225px;
+    color: rgb(109, 106, 106);
 }
 
 button { all: unset; }
 #leftIcon2{
     font-size: 25px;
     margin-right: 35px;
+    color: rgb(109, 106, 106);
     
 }
 #rightIcon2{
     font-size: 25px;
     position:absolute;
     margin-left: 720px;
+    color: rgb(109, 106, 106);
 }
 
 .categoryContainer{
