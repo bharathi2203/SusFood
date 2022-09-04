@@ -9,7 +9,7 @@ import os
 import pandas as pd
 import random
 import geocoder
-# import chat 
+import chat 
 
 overpass = Overpass()
 
@@ -112,6 +112,7 @@ def get_search_results(search_req):
 
     for fastFood in result2.elements():
         name = fastFood.tags()["name"]
+        print ("name")
         if "opening_hours" in fastFood.tags():
             opening_hours = fastFood.tags()["opening_hours"]
         else:
@@ -161,12 +162,12 @@ def get_search_results(search_req):
     # df.to_csv(r'RestDataBase2.csv', index = True, header = True)
     
     # send message notification 
-    # sor = sort_by_sus(myDB, search_req)
-    # final = combine(sor)
-    # df = pd.DataFrame.from_dict(final)
-    # df.to_csv(r'sortedUPennDB.csv', index = True, header = True)
-    # chat.send_notif("Your order has been placed.")
-    # return final
+    sor = sort_by_sus(myDB, search_req)
+    final = combine(sor)
+    df = pd.DataFrame.from_dict(final)
+    df.to_csv(r'sortedUPennDB.csv', index = True, header = True)
+    chat.send_notif("Your order has been placed.")
+    return final
 
 # map = folium.Map(location= [39.952583, -75.165222], zoom_start = 15)
 # EDIT BELOW 
@@ -190,11 +191,12 @@ class Map:
         colours = ["green", "blue", "red", "pink", "purple", "cyan"]
         for _, x in restDB.iterrows():
             url = x['picture']
-            # print (url)
+            print (url)
             folium.Marker (
             location = [x['rLat'], x['rLong']], 
-            popup = "<h1 style = 'text-align:center; font-family:Gaegu'>" + x["Name"]+ "</h1>" + "<img src =" + f"{url}" + 
-            "width = 300px, height = 300px>" + "<p> Opening hours: " + x["opening_hours"] + "</p>", 
+            popup ='<meta name="viewport" content="width=device-width, initial-scale=1">'+
+            '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">'+ "<h1 style = 'text-align:center; font-family:Gaegu'>" + x["Name"]+ "</h1>" + "<img src =" + f"{url}" + 
+            "width = 300px, height = 300px>" + "<p font-family:Gaegu> <i class='fa fa-cloud'> </i> Opening hours: " + x["opening_hours"] + "<br><i class='fa fa-phone'></i> Make your reservation at: "+ "+1 (267) 786 4893 "+ "<br> <i class='fa fa-globe'></i> View the full menu at: " + x['Url'] + "</p>", 
             tooltip = x['Name'], icon = folium.Icon(icon = 'heart', icon_color = 'white', color =random.choice(colours))).add_to(my_map)
         folium.Circle(location=coords, popup='Point 3A', fill_color='red', radius=1000, weight=2, color="red").add_to(my_map)
         folium.Circle(location=coords, popup='Point 2A', fill_color='yellow', radius=700, weight=2, color="yellow").add_to(my_map)
@@ -209,6 +211,6 @@ map = Map(center = coords, zoom_start = 25)
 print("done")
 map.showMap()
 
-# arr = get_search_results("University Of Pennsylvania")
-# for x in arr:
-#     print("\n", x, "\n")
+arr = get_search_results("University Of Pennsylvania")
+for x in arr:
+    print("\n", x, "\n")

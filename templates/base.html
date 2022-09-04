@@ -13,10 +13,39 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link href="w3.css" rel="stylesheet"/>
-    <script src="w3data.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_bf15ad1fa117db3738e9a520d5202f2f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -55,9 +84,1507 @@
         <script src = "carouselCards.js" type ="module"></script>
     </div>
 
-    <script>
-        w3IncludeHTML();
-    </script>
+    <div class="folium-map" id="map_bf15ad1fa117db3738e9a520d5202f2f" ></div>
+
+    <script>    
+    
+        var map_bf15ad1fa117db3738e9a520d5202f2f = L.map(
+            "map_bf15ad1fa117db3738e9a520d5202f2f",
+            {
+                center: [39.9522, -75.1932],
+                crs: L.CRS.EPSG3857,
+                zoom: 15,
+                zoomControl: true,
+                preferCanvas: false,
+            }
+        );
+
+        
+
+    
+
+        var tile_layer_fba5c6fc9c5181cd7329eb446e5dbdd5 = L.tileLayer(
+            "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+            {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var marker_02c3a51eee02cf582990aa0554a1badc = L.marker(
+            [39.9522, -75.1932],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_c5d79181be17589bbeabfd840ff53fce = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "user", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+        );
+        marker_02c3a51eee02cf582990aa0554a1badc.setIcon(icon_c5d79181be17589bbeabfd840ff53fce);
+    
+
+    var popup_b1088551b154af21606fa2f9d66024e3 = L.popup({"maxWidth": "100%"});
+
+    
+        var html_ba5b5d77036bebc27d09ed9f57cde9e8 = $(`<div id="html_ba5b5d77036bebc27d09ed9f57cde9e8" style="width: 100.0%; height: 100.0%;">ME</div>`)[0];
+        popup_b1088551b154af21606fa2f9d66024e3.setContent(html_ba5b5d77036bebc27d09ed9f57cde9e8);
+    
+
+    marker_02c3a51eee02cf582990aa0554a1badc.bindPopup(popup_b1088551b154af21606fa2f9d66024e3)
+    ;
+
+    
+
+
+        marker_02c3a51eee02cf582990aa0554a1badc.bindTooltip(
+            `<div>
+                 ME
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_babdccaf82231f2571902d0c532b18cf = L.marker(
+            [39.9533602, -75.202905],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_b2782fb42a9944b2ff9b8bec1e474688 = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+        );
+        marker_babdccaf82231f2571902d0c532b18cf.setIcon(icon_b2782fb42a9944b2ff9b8bec1e474688);
+    
+
+    var popup_cd78825864d40129689e70cbf4d8244e = L.popup({"maxWidth": "100%"});
+
+    
+        var html_1335adb9d120b1be9baec613296eea09 = $(`<div id="html_1335adb9d120b1be9baec613296eea09" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Greek Lady</h1><img src ='/Users/swatianshu/Downloads/dataset/Greek Ladygreekfood restaurant/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Su 09:00-23:00</p></div>`)[0];
+        popup_cd78825864d40129689e70cbf4d8244e.setContent(html_1335adb9d120b1be9baec613296eea09);
+    
+
+    marker_babdccaf82231f2571902d0c532b18cf.bindPopup(popup_cd78825864d40129689e70cbf4d8244e)
+    ;
+
+    
+
+
+        marker_babdccaf82231f2571902d0c532b18cf.bindTooltip(
+            `<div>
+                 Greek Lady
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_9754f855e936132680db74b79e4a0295 = L.marker(
+            [39.9541781, -75.2042721],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_e5fab47cf7c9829c0bd4647c909136b2 = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+        );
+        marker_9754f855e936132680db74b79e4a0295.setIcon(icon_e5fab47cf7c9829c0bd4647c909136b2);
+    
+
+    var popup_d275442f839652cb51696e3d519f3579 = L.popup({"maxWidth": "100%"});
+
+    
+        var html_2b47fef0616e03cf70bf0da20e3a72b7 = $(`<div id="html_2b47fef0616e03cf70bf0da20e3a72b7" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Wishbone Restaurant</h1><img src ='/Users/swatianshu/Downloads/dataset/Wishbone RestaurantFried_Chickenfood restaurant/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-We 08:00-22:00; Th 08:00-24:00; Fr 00:00-03:00,08:00-24:00; Sa 00:00-03:00,11:00-24:00; Su 00:00-03:00,11:00-22:00</p></div>`)[0];
+        popup_d275442f839652cb51696e3d519f3579.setContent(html_2b47fef0616e03cf70bf0da20e3a72b7);
+    
+
+    marker_9754f855e936132680db74b79e4a0295.bindPopup(popup_d275442f839652cb51696e3d519f3579)
+    ;
+
+    
+
+
+        marker_9754f855e936132680db74b79e4a0295.bindTooltip(
+            `<div>
+                 Wishbone Restaurant
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_d59ca85e35b65b9f5a0aeb5c7aa7ad14 = L.marker(
+            [39.9552548, -75.2022203],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_4aa3eb05d5121c4dea107be1ae2d3b74 = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+        );
+        marker_d59ca85e35b65b9f5a0aeb5c7aa7ad14.setIcon(icon_4aa3eb05d5121c4dea107be1ae2d3b74);
+    
+
+    var popup_003c7ad634461a20b5c92c6ecb0f4a0a = L.popup({"maxWidth": "100%"});
+
+    
+        var html_ec73f14be75a2f7c253d3e2a555bf6e3 = $(`<div id="html_ec73f14be75a2f7c253d3e2a555bf6e3" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Mizu Sushi Bar</h1><img src ='/Users/swatianshu/Downloads/dataset/Mizu Sushi Barsushifood restaurant/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Su 09:00 - 18:00</p></div>`)[0];
+        popup_003c7ad634461a20b5c92c6ecb0f4a0a.setContent(html_ec73f14be75a2f7c253d3e2a555bf6e3);
+    
+
+    marker_d59ca85e35b65b9f5a0aeb5c7aa7ad14.bindPopup(popup_003c7ad634461a20b5c92c6ecb0f4a0a)
+    ;
+
+    
+
+
+        marker_d59ca85e35b65b9f5a0aeb5c7aa7ad14.bindTooltip(
+            `<div>
+                 Mizu Sushi Bar
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_dbe209b413dab32339e3b5c1d33d702d = L.marker(
+            [39.9534649, -75.1960572],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_dc3394fcf0362bbcb77f7369a2314b28 = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
+        );
+        marker_dbe209b413dab32339e3b5c1d33d702d.setIcon(icon_dc3394fcf0362bbcb77f7369a2314b28);
+    
+
+    var popup_cc915ad2d5800143be0ca02394fdd5f7 = L.popup({"maxWidth": "100%"});
+
+    
+        var html_69eec51716cd9d7bcab66d9109623573 = $(`<div id="html_69eec51716cd9d7bcab66d9109623573" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Louie Louie</h1><img src ='/Users/swatianshu/Downloads/dataset/Louie Louiegeneralfood restaurant/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Su 09:00 - 18:00</p></div>`)[0];
+        popup_cc915ad2d5800143be0ca02394fdd5f7.setContent(html_69eec51716cd9d7bcab66d9109623573);
+    
+
+    marker_dbe209b413dab32339e3b5c1d33d702d.bindPopup(popup_cc915ad2d5800143be0ca02394fdd5f7)
+    ;
+
+    
+
+
+        marker_dbe209b413dab32339e3b5c1d33d702d.bindTooltip(
+            `<div>
+                 Louie Louie
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_d9e3c313f19522c87b5dab600d67326e = L.marker(
+            [39.9510545, -75.198405],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_f376acd35f84247f05ad711695076c9e = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+        );
+        marker_d9e3c313f19522c87b5dab600d67326e.setIcon(icon_f376acd35f84247f05ad711695076c9e);
+    
+
+    var popup_be3174375661490e806889a3d05ab938 = L.popup({"maxWidth": "100%"});
+
+    
+        var html_2e501a117f7fc0c7d3960cc5236084aa = $(`<div id="html_2e501a117f7fc0c7d3960cc5236084aa" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Beijing</h1><img src ='/Users/swatianshu/Downloads/dataset/Beijingchinesefood restaurant/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Su 09:00 - 18:00</p></div>`)[0];
+        popup_be3174375661490e806889a3d05ab938.setContent(html_2e501a117f7fc0c7d3960cc5236084aa);
+    
+
+    marker_d9e3c313f19522c87b5dab600d67326e.bindPopup(popup_be3174375661490e806889a3d05ab938)
+    ;
+
+    
+
+
+        marker_d9e3c313f19522c87b5dab600d67326e.bindTooltip(
+            `<div>
+                 Beijing
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_e1dacb6eeac1d092ca36c4aadd2837c0 = L.marker(
+            [39.9523838, -75.1875235],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_352d8b4dba89e41c07a1db12271e0847 = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+        );
+        marker_e1dacb6eeac1d092ca36c4aadd2837c0.setIcon(icon_352d8b4dba89e41c07a1db12271e0847);
+    
+
+    var popup_5b86d9b2d5011d0473d002199e592249 = L.popup({"maxWidth": "100%"});
+
+    
+        var html_ed08c7d4e8a07892a52258a29c4b2d3e = $(`<div id="html_ed08c7d4e8a07892a52258a29c4b2d3e" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Tipsy Bistro</h1><img src ='/Users/swatianshu/Downloads/dataset/Tipsy Bistrogeneralfood restaurant/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Su 09:00 - 18:00</p></div>`)[0];
+        popup_5b86d9b2d5011d0473d002199e592249.setContent(html_ed08c7d4e8a07892a52258a29c4b2d3e);
+    
+
+    marker_e1dacb6eeac1d092ca36c4aadd2837c0.bindPopup(popup_5b86d9b2d5011d0473d002199e592249)
+    ;
+
+    
+
+
+        marker_e1dacb6eeac1d092ca36c4aadd2837c0.bindTooltip(
+            `<div>
+                 Tipsy Bistro
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_3fbda53bedf947f217df5c70fbca3b1a = L.marker(
+            [39.9523632, -75.187309],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_60b7e5f24d3c4220d60f581e5190e70b = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+        );
+        marker_3fbda53bedf947f217df5c70fbca3b1a.setIcon(icon_60b7e5f24d3c4220d60f581e5190e70b);
+    
+
+    var popup_549ed0aa52f8f32259ef8b538b543152 = L.popup({"maxWidth": "100%"});
+
+    
+        var html_a6d55eb90514b969eb514841ccde3d48 = $(`<div id="html_a6d55eb90514b969eb514841ccde3d48" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Picnic</h1><img src ='/Users/swatianshu/Downloads/dataset/Picnicgeneralfood restaurant/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Su 09:00 - 18:00</p></div>`)[0];
+        popup_549ed0aa52f8f32259ef8b538b543152.setContent(html_a6d55eb90514b969eb514841ccde3d48);
+    
+
+    marker_3fbda53bedf947f217df5c70fbca3b1a.bindPopup(popup_549ed0aa52f8f32259ef8b538b543152)
+    ;
+
+    
+
+
+        marker_3fbda53bedf947f217df5c70fbca3b1a.bindTooltip(
+            `<div>
+                 Picnic
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_7d312a6083e30070aa7c80e8a51b5ce9 = L.marker(
+            [39.9539673, -75.1963833],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_f7be8a86551a3472b9b398e4576785e5 = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+        );
+        marker_7d312a6083e30070aa7c80e8a51b5ce9.setIcon(icon_f7be8a86551a3472b9b398e4576785e5);
+    
+
+    var popup_b581d108fe7d100004ae49a9dfc35d21 = L.popup({"maxWidth": "100%"});
+
+    
+        var html_338b0d2a98b54dacae11cf2791e50d5f = $(`<div id="html_338b0d2a98b54dacae11cf2791e50d5f" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Pod</h1><img src ='/Users/swatianshu/Downloads/dataset/Podasianfood restaurant/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Th 11:30-22:00; Fr 11:30-23:00; Sa 17:00-23:00; Su 17:00-22:00</p></div>`)[0];
+        popup_b581d108fe7d100004ae49a9dfc35d21.setContent(html_338b0d2a98b54dacae11cf2791e50d5f);
+    
+
+    marker_7d312a6083e30070aa7c80e8a51b5ce9.bindPopup(popup_b581d108fe7d100004ae49a9dfc35d21)
+    ;
+
+    
+
+
+        marker_7d312a6083e30070aa7c80e8a51b5ce9.bindTooltip(
+            `<div>
+                 Pod
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_b251e37a7fe745818d5b18bf23125b78 = L.marker(
+            [39.9523255, -75.186976],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_2613acca07b7c045b33787e138fc9de2 = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
+        );
+        marker_b251e37a7fe745818d5b18bf23125b78.setIcon(icon_2613acca07b7c045b33787e138fc9de2);
+    
+
+    var popup_c47cfe78f927302d14833d6a6c28c66f = L.popup({"maxWidth": "100%"});
+
+    
+        var html_f8d377b986d2871f12c14e4d43fa1ada = $(`<div id="html_f8d377b986d2871f12c14e4d43fa1ada" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>St. Declan's Well</h1><img src ='/Users/swatianshu/Downloads/dataset/St. Declan's WellIrish_American_pubfood restaurant/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Su 09:00 - 18:00</p></div>`)[0];
+        popup_c47cfe78f927302d14833d6a6c28c66f.setContent(html_f8d377b986d2871f12c14e4d43fa1ada);
+    
+
+    marker_b251e37a7fe745818d5b18bf23125b78.bindPopup(popup_c47cfe78f927302d14833d6a6c28c66f)
+    ;
+
+    
+
+
+        marker_b251e37a7fe745818d5b18bf23125b78.bindTooltip(
+            `<div>
+                 St. Declan's Well
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_02c283bdfa9ac14cd8502baf7fcfe834 = L.marker(
+            [39.9551651, -75.1945212],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_21d358b435064cd7d217686e4746f7df = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "cyan", "prefix": "glyphicon"}
+        );
+        marker_02c283bdfa9ac14cd8502baf7fcfe834.setIcon(icon_21d358b435064cd7d217686e4746f7df);
+    
+
+    var popup_ff71e988ebff1e5610414034450db7f4 = L.popup({"maxWidth": "100%"});
+
+    
+        var html_6ebe82048b9f78f09c4eb8ac9ae8dffd = $(`<div id="html_6ebe82048b9f78f09c4eb8ac9ae8dffd" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>The Axis Pizza</h1><img src ='/Users/swatianshu/Downloads/dataset/The Axis Pizzapizzafood restaurant/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: 24/7</p></div>`)[0];
+        popup_ff71e988ebff1e5610414034450db7f4.setContent(html_6ebe82048b9f78f09c4eb8ac9ae8dffd);
+    
+
+    marker_02c283bdfa9ac14cd8502baf7fcfe834.bindPopup(popup_ff71e988ebff1e5610414034450db7f4)
+    ;
+
+    
+
+
+        marker_02c283bdfa9ac14cd8502baf7fcfe834.bindTooltip(
+            `<div>
+                 The Axis Pizza
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_3a9f40b5d631d25b3385a9f11fb84477 = L.marker(
+            [39.9535587, -75.2028717],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_3bf80ab70daa73ea21978cc3e7a14ea6 = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+        );
+        marker_3a9f40b5d631d25b3385a9f11fb84477.setIcon(icon_3bf80ab70daa73ea21978cc3e7a14ea6);
+    
+
+    var popup_313fea632b5359d636fc752c643fdae5 = L.popup({"maxWidth": "100%"});
+
+    
+        var html_2123d00c21ce7792df3cfb6ad723386a = $(`<div id="html_2123d00c21ce7792df3cfb6ad723386a" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>HipCityVeg</h1><img src ='/Users/swatianshu/Downloads/dataset/HipCityVegamerican;burger;sandwich;wraps;milkshakes;saladsfood restaurant/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Su 11:00-23:00</p></div>`)[0];
+        popup_313fea632b5359d636fc752c643fdae5.setContent(html_2123d00c21ce7792df3cfb6ad723386a);
+    
+
+    marker_3a9f40b5d631d25b3385a9f11fb84477.bindPopup(popup_313fea632b5359d636fc752c643fdae5)
+    ;
+
+    
+
+
+        marker_3a9f40b5d631d25b3385a9f11fb84477.bindTooltip(
+            `<div>
+                 HipCityVeg
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_24f2ec4e8881360f0e795b383d2423b7 = L.marker(
+            [39.9530359, -75.1925145],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_6c4e7ca8c643aa3985914b4c5770471e = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+        );
+        marker_24f2ec4e8881360f0e795b383d2423b7.setIcon(icon_6c4e7ca8c643aa3985914b4c5770471e);
+    
+
+    var popup_69658b86d0925349d277d69c7a096a7e = L.popup({"maxWidth": "100%"});
+
+    
+        var html_2c64836941bb9c2cada2964262a14261 = $(`<div id="html_2c64836941bb9c2cada2964262a14261" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Goldie</h1><img src ='/Users/swatianshu/Downloads/dataset/Goldiefalafel;mediterranean;milkshakesfood restaurant/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Fr 11:00-20:00; Sa 11:00-19:00; Su 11:00-17:00</p></div>`)[0];
+        popup_69658b86d0925349d277d69c7a096a7e.setContent(html_2c64836941bb9c2cada2964262a14261);
+    
+
+    marker_24f2ec4e8881360f0e795b383d2423b7.bindPopup(popup_69658b86d0925349d277d69c7a096a7e)
+    ;
+
+    
+
+
+        marker_24f2ec4e8881360f0e795b383d2423b7.bindTooltip(
+            `<div>
+                 Goldie
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_ef90dea34d14f360abef1baa46fd63ea = L.marker(
+            [39.954157, -75.2014747],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_59e8e1fa542fc0d2972d162470ca02e7 = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
+        );
+        marker_ef90dea34d14f360abef1baa46fd63ea.setIcon(icon_59e8e1fa542fc0d2972d162470ca02e7);
+    
+
+    var popup_0114156425b7720d5de82adb02990017 = L.popup({"maxWidth": "100%"});
+
+    
+        var html_b9c30fe5391b699d40864d5bdbcf18aa = $(`<div id="html_b9c30fe5391b699d40864d5bdbcf18aa" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>&Pizza</h1><img src ='/Users/swatianshu/Downloads/dataset/&Pizzapizzafood restaurant/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Su-Th 11:00-21:00; Fr-Sa 11:00-22:00</p></div>`)[0];
+        popup_0114156425b7720d5de82adb02990017.setContent(html_b9c30fe5391b699d40864d5bdbcf18aa);
+    
+
+    marker_ef90dea34d14f360abef1baa46fd63ea.bindPopup(popup_0114156425b7720d5de82adb02990017)
+    ;
+
+    
+
+
+        marker_ef90dea34d14f360abef1baa46fd63ea.bindTooltip(
+            `<div>
+                 &Pizza
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_367f2c72b4471a8ae4caaac00d2ad73a = L.marker(
+            [39.952567, -75.1923796],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_354a37c9c226309086cafa0cfa8b1bb4 = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+        );
+        marker_367f2c72b4471a8ae4caaac00d2ad73a.setIcon(icon_354a37c9c226309086cafa0cfa8b1bb4);
+    
+
+    var popup_69328886c6f98061e8f936e826885ce8 = L.popup({"maxWidth": "100%"});
+
+    
+        var html_afc4de316a4996414bb4a882c2120244 = $(`<div id="html_afc4de316a4996414bb4a882c2120244" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Magic Carpet Foods</h1><img src ='/Users/swatianshu/Downloads/dataset/Magic Carpet Foodsmediterraneanfood restaurant/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: 11:00-15:00</p></div>`)[0];
+        popup_69328886c6f98061e8f936e826885ce8.setContent(html_afc4de316a4996414bb4a882c2120244);
+    
+
+    marker_367f2c72b4471a8ae4caaac00d2ad73a.bindPopup(popup_69328886c6f98061e8f936e826885ce8)
+    ;
+
+    
+
+
+        marker_367f2c72b4471a8ae4caaac00d2ad73a.bindTooltip(
+            `<div>
+                 Magic Carpet Foods
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_f55468f3b42828a22ba920b61a1dc541 = L.marker(
+            [39.9543263, -75.2015278],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_f043ae6318e22f5fde84d919054a6702 = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+        );
+        marker_f55468f3b42828a22ba920b61a1dc541.setIcon(icon_f043ae6318e22f5fde84d919054a6702);
+    
+
+    var popup_22431cab75d3288a865a6b9d25f8639b = L.popup({"maxWidth": "100%"});
+
+    
+        var html_3eefc36b6afa9d474d304c9a293635a8 = $(`<div id="html_3eefc36b6afa9d474d304c9a293635a8" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>City Tap House</h1><img src ='/Users/swatianshu/Downloads/dataset/City Tap Housegeneralfood restaurant/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Th 11:30-00:00; Fr 11:30-02:00; Sa 11:00-02:00; Su 11:00-00:00</p></div>`)[0];
+        popup_22431cab75d3288a865a6b9d25f8639b.setContent(html_3eefc36b6afa9d474d304c9a293635a8);
+    
+
+    marker_f55468f3b42828a22ba920b61a1dc541.bindPopup(popup_22431cab75d3288a865a6b9d25f8639b)
+    ;
+
+    
+
+
+        marker_f55468f3b42828a22ba920b61a1dc541.bindTooltip(
+            `<div>
+                 City Tap House
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_51bc65dfc7948a846c5dcbecdae5124e = L.marker(
+            [39.9545518, -75.1947958],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_92ba047de8ef36544c3e2fbf0b31a654 = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+        );
+        marker_51bc65dfc7948a846c5dcbecdae5124e.setIcon(icon_92ba047de8ef36544c3e2fbf0b31a654);
+    
+
+    var popup_811925b54fd90d3fd9343cf89b67c6c3 = L.popup({"maxWidth": "100%"});
+
+    
+        var html_078a936784fc0c1288168a61e1a24aec = $(`<div id="html_078a936784fc0c1288168a61e1a24aec" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Spread Bagelry</h1><img src ='/Users/swatianshu/Downloads/dataset/Spread Bagelrybagelsfood restaurant/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Su 06:00-16:00</p></div>`)[0];
+        popup_811925b54fd90d3fd9343cf89b67c6c3.setContent(html_078a936784fc0c1288168a61e1a24aec);
+    
+
+    marker_51bc65dfc7948a846c5dcbecdae5124e.bindPopup(popup_811925b54fd90d3fd9343cf89b67c6c3)
+    ;
+
+    
+
+
+        marker_51bc65dfc7948a846c5dcbecdae5124e.bindTooltip(
+            `<div>
+                 Spread Bagelry
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_c11b6a4e46e7d7ba7b9b421b90da5200 = L.marker(
+            [39.95477, -75.20272],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_960698657d34f726cf4ada0a02fc4127 = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+        );
+        marker_c11b6a4e46e7d7ba7b9b421b90da5200.setIcon(icon_960698657d34f726cf4ada0a02fc4127);
+    
+
+    var popup_82e829d0486f4895d810c523ee71b704 = L.popup({"maxWidth": "100%"});
+
+    
+        var html_66ef634318191968dc07ef99bc72cecb = $(`<div id="html_66ef634318191968dc07ef99bc72cecb" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Hummus Grill</h1><img src ='/Users/swatianshu/Downloads/dataset/Hummus Grillmediterraneanfood restaurant/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Fr 11:00-20:45; Sa 11:00-19:45; Su 12:00-20:45</p></div>`)[0];
+        popup_82e829d0486f4895d810c523ee71b704.setContent(html_66ef634318191968dc07ef99bc72cecb);
+    
+
+    marker_c11b6a4e46e7d7ba7b9b421b90da5200.bindPopup(popup_82e829d0486f4895d810c523ee71b704)
+    ;
+
+    
+
+
+        marker_c11b6a4e46e7d7ba7b9b421b90da5200.bindTooltip(
+            `<div>
+                 Hummus Grill
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_94f6213f609a1ab8be9eb016287b56e9 = L.marker(
+            [39.95477, -75.20272],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_da2c2c9819cf46d18ee009654a545578 = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+        );
+        marker_94f6213f609a1ab8be9eb016287b56e9.setIcon(icon_da2c2c9819cf46d18ee009654a545578);
+    
+
+    var popup_aca45e06f68aa706bd9cca0ca17b7889 = L.popup({"maxWidth": "100%"});
+
+    
+        var html_9ab385af9633d000cadf00b6f5aca8c1 = $(`<div id="html_9ab385af9633d000cadf00b6f5aca8c1" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Baby Blues BBQ</h1><img src ='/Users/swatianshu/Downloads/dataset/Baby Blues BBQgeneralfood restaurant/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Su 09:00 - 18:00</p></div>`)[0];
+        popup_aca45e06f68aa706bd9cca0ca17b7889.setContent(html_9ab385af9633d000cadf00b6f5aca8c1);
+    
+
+    marker_94f6213f609a1ab8be9eb016287b56e9.bindPopup(popup_aca45e06f68aa706bd9cca0ca17b7889)
+    ;
+
+    
+
+
+        marker_94f6213f609a1ab8be9eb016287b56e9.bindTooltip(
+            `<div>
+                 Baby Blues BBQ
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_503ab85de4df1991edc3b9c34d0fb17e = L.marker(
+            [39.95477, -75.20272],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_eeae47e5e90b30ab31004fbf1e3c8f77 = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+        );
+        marker_503ab85de4df1991edc3b9c34d0fb17e.setIcon(icon_eeae47e5e90b30ab31004fbf1e3c8f77);
+    
+
+    var popup_2cd4bb5cedc280e4face57123e0e4d2a = L.popup({"maxWidth": "100%"});
+
+    
+        var html_f698894e50872cd61a9e43e04c10d462 = $(`<div id="html_f698894e50872cd61a9e43e04c10d462" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Doc Magrogan's</h1><img src ='/Users/swatianshu/Downloads/dataset/Doc Magrogan'sgeneralfood restaurant/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Su 09:00 - 18:00</p></div>`)[0];
+        popup_2cd4bb5cedc280e4face57123e0e4d2a.setContent(html_f698894e50872cd61a9e43e04c10d462);
+    
+
+    marker_503ab85de4df1991edc3b9c34d0fb17e.bindPopup(popup_2cd4bb5cedc280e4face57123e0e4d2a)
+    ;
+
+    
+
+
+        marker_503ab85de4df1991edc3b9c34d0fb17e.bindTooltip(
+            `<div>
+                 Doc Magrogan's
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_0f21a352c3435ff70460e97a027b0477 = L.marker(
+            [39.95477, -75.20272],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_73e9129c5cfa7c9a7bd9daa27a56f80f = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+        );
+        marker_0f21a352c3435ff70460e97a027b0477.setIcon(icon_73e9129c5cfa7c9a7bd9daa27a56f80f);
+    
+
+    var popup_1defa5f410748c5229345b167ff78762 = L.popup({"maxWidth": "100%"});
+
+    
+        var html_5c1b45cd51a6dc328a9dc35ac6ee34a1 = $(`<div id="html_5c1b45cd51a6dc328a9dc35ac6ee34a1" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>White Dog Cafe</h1><img src ='/Users/swatianshu/Downloads/dataset/White Dog Cafegeneralfood restaurant/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Fr 11:00-14:30; Sa-Su 09:30-14:30; Mo-Su 14:30-17:00; Mo-Th 17:00-21:30; Fr-Sa 17:00-22:00; Su 17:00-21:00</p></div>`)[0];
+        popup_1defa5f410748c5229345b167ff78762.setContent(html_5c1b45cd51a6dc328a9dc35ac6ee34a1);
+    
+
+    marker_0f21a352c3435ff70460e97a027b0477.bindPopup(popup_1defa5f410748c5229345b167ff78762)
+    ;
+
+    
+
+
+        marker_0f21a352c3435ff70460e97a027b0477.bindTooltip(
+            `<div>
+                 White Dog Cafe
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_60b364f387403deffff7ad6572c4d2c6 = L.marker(
+            [39.95477, -75.20272],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_ec9c098b6fc56329e6b171db0db446ed = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+        );
+        marker_60b364f387403deffff7ad6572c4d2c6.setIcon(icon_ec9c098b6fc56329e6b171db0db446ed);
+    
+
+    var popup_6cb43e279fd75cf5f766b437c4cc2f4f = L.popup({"maxWidth": "100%"});
+
+    
+        var html_15e16d72d861b7322ba87893bc9c62ca = $(`<div id="html_15e16d72d861b7322ba87893bc9c62ca" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Federal Donuts</h1><img src ='/Users/swatianshu/Downloads/dataset/Federal Donutsdonut;doughnut;fried_chicken;donuts;doughnutsfood restaurant/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Su 07:00-19:00</p></div>`)[0];
+        popup_6cb43e279fd75cf5f766b437c4cc2f4f.setContent(html_15e16d72d861b7322ba87893bc9c62ca);
+    
+
+    marker_60b364f387403deffff7ad6572c4d2c6.bindPopup(popup_6cb43e279fd75cf5f766b437c4cc2f4f)
+    ;
+
+    
+
+
+        marker_60b364f387403deffff7ad6572c4d2c6.bindTooltip(
+            `<div>
+                 Federal Donuts
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_f9358d9dd71d74abf3bc2a267620bfb6 = L.marker(
+            [39.9531356, -75.2029524],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_0bbb37ca78512fdea24f62522bbeba61 = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
+        );
+        marker_f9358d9dd71d74abf3bc2a267620bfb6.setIcon(icon_0bbb37ca78512fdea24f62522bbeba61);
+    
+
+    var popup_98907021cce642ecb659dd4ca322272b = L.popup({"maxWidth": "100%"});
+
+    
+        var html_a5f1e0c0b239677dc932bd530a5dddb8 = $(`<div id="html_a5f1e0c0b239677dc932bd530a5dddb8" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Qdoba</h1><img src ='/Users/swatianshu/Downloads/dataset2/Qdobafood/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Su 09:00 - 18:00</p></div>`)[0];
+        popup_98907021cce642ecb659dd4ca322272b.setContent(html_a5f1e0c0b239677dc932bd530a5dddb8);
+    
+
+    marker_f9358d9dd71d74abf3bc2a267620bfb6.bindPopup(popup_98907021cce642ecb659dd4ca322272b)
+    ;
+
+    
+
+
+        marker_f9358d9dd71d74abf3bc2a267620bfb6.bindTooltip(
+            `<div>
+                 Qdoba
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_229861625f06667c63151d80feca5d4b = L.marker(
+            [39.9535857, -75.1949927],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_ca0e5d7b921891ce16ea9f2518d383ce = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "cyan", "prefix": "glyphicon"}
+        );
+        marker_229861625f06667c63151d80feca5d4b.setIcon(icon_ca0e5d7b921891ce16ea9f2518d383ce);
+    
+
+    var popup_fb02686c28c907e437c70d04cbf8ce02 = L.popup({"maxWidth": "100%"});
+
+    
+        var html_d8e9d7d1ecedae7e3e2beb8b48afcff0 = $(`<div id="html_d8e9d7d1ecedae7e3e2beb8b48afcff0" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Così</h1><img src ='/Users/swatianshu/Downloads/dataset2/Cosìfood/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Su 09:00 - 18:00</p></div>`)[0];
+        popup_fb02686c28c907e437c70d04cbf8ce02.setContent(html_d8e9d7d1ecedae7e3e2beb8b48afcff0);
+    
+
+    marker_229861625f06667c63151d80feca5d4b.bindPopup(popup_fb02686c28c907e437c70d04cbf8ce02)
+    ;
+
+    
+
+
+        marker_229861625f06667c63151d80feca5d4b.bindTooltip(
+            `<div>
+                 Così
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_bffddfdab5cfeefe19600f63c5475625 = L.marker(
+            [39.9539597, -75.2029124],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_5df949856508101e11b0f261ea43462c = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
+        );
+        marker_bffddfdab5cfeefe19600f63c5475625.setIcon(icon_5df949856508101e11b0f261ea43462c);
+    
+
+    var popup_c4aaa665ebf18385cd7cf0e2584c88c4 = L.popup({"maxWidth": "100%"});
+
+    
+        var html_7a03eb5ed60bfb9e1be30b85cb294bef = $(`<div id="html_7a03eb5ed60bfb9e1be30b85cb294bef" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Panera Bread</h1><img src ='/Users/swatianshu/Downloads/dataset2/Panera Breadfood/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Su 09:00 - 18:00</p></div>`)[0];
+        popup_c4aaa665ebf18385cd7cf0e2584c88c4.setContent(html_7a03eb5ed60bfb9e1be30b85cb294bef);
+    
+
+    marker_bffddfdab5cfeefe19600f63c5475625.bindPopup(popup_c4aaa665ebf18385cd7cf0e2584c88c4)
+    ;
+
+    
+
+
+        marker_bffddfdab5cfeefe19600f63c5475625.bindTooltip(
+            `<div>
+                 Panera Bread
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_6e33d8bba31bdab63201d21b010da1fd = L.marker(
+            [39.9542424, -75.2015114],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_92184548a2515d92f5368baad8114af4 = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+        );
+        marker_6e33d8bba31bdab63201d21b010da1fd.setIcon(icon_92184548a2515d92f5368baad8114af4);
+    
+
+    var popup_5b661180c66a8aecc19a7f440e4fbb9d = L.popup({"maxWidth": "100%"});
+
+    
+        var html_1ea33308109a83b95d780d6338b2d5b5 = $(`<div id="html_1ea33308109a83b95d780d6338b2d5b5" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Jimmy John's</h1><img src ='/Users/swatianshu/Downloads/dataset2/Jimmy John'sfood/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Su 00:00-03:00,10:30-24:00</p></div>`)[0];
+        popup_5b661180c66a8aecc19a7f440e4fbb9d.setContent(html_1ea33308109a83b95d780d6338b2d5b5);
+    
+
+    marker_6e33d8bba31bdab63201d21b010da1fd.bindPopup(popup_5b661180c66a8aecc19a7f440e4fbb9d)
+    ;
+
+    
+
+
+        marker_6e33d8bba31bdab63201d21b010da1fd.bindTooltip(
+            `<div>
+                 Jimmy John's
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_c4e2098575d6dde6c1fa8ee294d5bfab = L.marker(
+            [39.9540367, -75.2008225],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_0e82c75cebfdc4a034badb00380bea5d = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+        );
+        marker_c4e2098575d6dde6c1fa8ee294d5bfab.setIcon(icon_0e82c75cebfdc4a034badb00380bea5d);
+    
+
+    var popup_04ad48effd1e0c4780b631fa35e4c16c = L.popup({"maxWidth": "100%"});
+
+    
+        var html_dbaa40ed452b70c1f00fcebb50b6b6a9 = $(`<div id="html_dbaa40ed452b70c1f00fcebb50b6b6a9" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Chipotle</h1><img src ='/Users/swatianshu/Downloads/dataset2/Chipotlefood/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Su 09:00 - 18:00</p></div>`)[0];
+        popup_04ad48effd1e0c4780b631fa35e4c16c.setContent(html_dbaa40ed452b70c1f00fcebb50b6b6a9);
+    
+
+    marker_c4e2098575d6dde6c1fa8ee294d5bfab.bindPopup(popup_04ad48effd1e0c4780b631fa35e4c16c)
+    ;
+
+    
+
+
+        marker_c4e2098575d6dde6c1fa8ee294d5bfab.bindTooltip(
+            `<div>
+                 Chipotle
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_0b964ce21b3a322d5251f25cdd40c07a = L.marker(
+            [39.9540795, -75.2011863],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_aacd0984d048988e9f0d78c5cc6ac72e = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+        );
+        marker_0b964ce21b3a322d5251f25cdd40c07a.setIcon(icon_aacd0984d048988e9f0d78c5cc6ac72e);
+    
+
+    var popup_02536dae528177bb045094c42409455b = L.popup({"maxWidth": "100%"});
+
+    
+        var html_a24097a6b4a869ffa2db024a88a85d00 = $(`<div id="html_a24097a6b4a869ffa2db024a88a85d00" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Sweet Green</h1><img src ='/Users/swatianshu/Downloads/dataset2/Sweet Greenfood/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Su 09:00 - 18:00</p></div>`)[0];
+        popup_02536dae528177bb045094c42409455b.setContent(html_a24097a6b4a869ffa2db024a88a85d00);
+    
+
+    marker_0b964ce21b3a322d5251f25cdd40c07a.bindPopup(popup_02536dae528177bb045094c42409455b)
+    ;
+
+    
+
+
+        marker_0b964ce21b3a322d5251f25cdd40c07a.bindTooltip(
+            `<div>
+                 Sweet Green
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_d10e2eb1d2e5fd1eedf7048ce1aa6d87 = L.marker(
+            [39.9530964, -75.1934836],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_dd71c6e310454573f88e3215bc280577 = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+        );
+        marker_d10e2eb1d2e5fd1eedf7048ce1aa6d87.setIcon(icon_dd71c6e310454573f88e3215bc280577);
+    
+
+    var popup_61267c6de8c5ccfa8737d7c1d1fa5958 = L.popup({"maxWidth": "100%"});
+
+    
+        var html_7845d02f6bafb9b478cbc976ace2a3d1 = $(`<div id="html_7845d02f6bafb9b478cbc976ace2a3d1" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Dunkin'</h1><img src ='/Users/swatianshu/Downloads/dataset2/Dunkin'food/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Su 09:00 - 18:00</p></div>`)[0];
+        popup_61267c6de8c5ccfa8737d7c1d1fa5958.setContent(html_7845d02f6bafb9b478cbc976ace2a3d1);
+    
+
+    marker_d10e2eb1d2e5fd1eedf7048ce1aa6d87.bindPopup(popup_61267c6de8c5ccfa8737d7c1d1fa5958)
+    ;
+
+    
+
+
+        marker_d10e2eb1d2e5fd1eedf7048ce1aa6d87.bindTooltip(
+            `<div>
+                 Dunkin'
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_9a7ff2d6c7a1a14f25295d986414d4ef = L.marker(
+            [39.9479351, -75.1962888],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_176363c4df219b78aada6c9f310b7e1c = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
+        );
+        marker_9a7ff2d6c7a1a14f25295d986414d4ef.setIcon(icon_176363c4df219b78aada6c9f310b7e1c);
+    
+
+    var popup_3310e88de211ff38d47f9cff91e526ed = L.popup({"maxWidth": "100%"});
+
+    
+        var html_92f526ec8ac7ef5790a97efd63da1f97 = $(`<div id="html_92f526ec8ac7ef5790a97efd63da1f97" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Au Bon Pain</h1><img src ='/Users/swatianshu/Downloads/dataset2/Au Bon Painfood/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Su 09:00 - 18:00</p></div>`)[0];
+        popup_3310e88de211ff38d47f9cff91e526ed.setContent(html_92f526ec8ac7ef5790a97efd63da1f97);
+    
+
+    marker_9a7ff2d6c7a1a14f25295d986414d4ef.bindPopup(popup_3310e88de211ff38d47f9cff91e526ed)
+    ;
+
+    
+
+
+        marker_9a7ff2d6c7a1a14f25295d986414d4ef.bindTooltip(
+            `<div>
+                 Au Bon Pain
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_687ade9d292b6e1e6a924e2794e64333 = L.marker(
+            [39.9535811, -75.1873233],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_9fd0a5a1c8f3f318f7ca949a10969e94 = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+        );
+        marker_687ade9d292b6e1e6a924e2794e64333.setIcon(icon_9fd0a5a1c8f3f318f7ca949a10969e94);
+    
+
+    var popup_ce555c182e90afbd2384f48876834838 = L.popup({"maxWidth": "100%"});
+
+    
+        var html_6549f74f2a5914aba0c16dedd0d5b34b = $(`<div id="html_6549f74f2a5914aba0c16dedd0d5b34b" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Wahoo's Fish Taco</h1><img src ='/Users/swatianshu/Downloads/dataset2/Wahoo's Fish Tacofood/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Fr 11:00-23:00; Sa-Su 12:00-23:00</p></div>`)[0];
+        popup_ce555c182e90afbd2384f48876834838.setContent(html_6549f74f2a5914aba0c16dedd0d5b34b);
+    
+
+    marker_687ade9d292b6e1e6a924e2794e64333.bindPopup(popup_ce555c182e90afbd2384f48876834838)
+    ;
+
+    
+
+
+        marker_687ade9d292b6e1e6a924e2794e64333.bindTooltip(
+            `<div>
+                 Wahoo's Fish Taco
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_491acd06bd218dad57311f3402043212 = L.marker(
+            [39.9547948, -75.2023165],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_253d379d828ae67d053c8b2fc9460e73 = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
+        );
+        marker_491acd06bd218dad57311f3402043212.setIcon(icon_253d379d828ae67d053c8b2fc9460e73);
+    
+
+    var popup_f651e25fb37e6350555a4301b4eaac07 = L.popup({"maxWidth": "100%"});
+
+    
+        var html_22ae65ffa9fb6a11eb7f7ece290d7b09 = $(`<div id="html_22ae65ffa9fb6a11eb7f7ece290d7b09" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Dunkin'</h1><img src ='/Users/swatianshu/Downloads/dataset2/Dunkin'food/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: 24/7</p></div>`)[0];
+        popup_f651e25fb37e6350555a4301b4eaac07.setContent(html_22ae65ffa9fb6a11eb7f7ece290d7b09);
+    
+
+    marker_491acd06bd218dad57311f3402043212.bindPopup(popup_f651e25fb37e6350555a4301b4eaac07)
+    ;
+
+    
+
+
+        marker_491acd06bd218dad57311f3402043212.bindTooltip(
+            `<div>
+                 Dunkin'
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_f7042fe18ba2fa84485bc788dd22d492 = L.marker(
+            [39.9536404, -75.1872815],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_2675cb88dc71dda45c189ec41190653a = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "cyan", "prefix": "glyphicon"}
+        );
+        marker_f7042fe18ba2fa84485bc788dd22d492.setIcon(icon_2675cb88dc71dda45c189ec41190653a);
+    
+
+    var popup_3cbbc2027f72ee1124532b4354f74753 = L.popup({"maxWidth": "100%"});
+
+    
+        var html_a849f9fc1e559a68dade5c9aa918e646 = $(`<div id="html_a849f9fc1e559a68dade5c9aa918e646" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>CM chicken</h1><img src ='/Users/swatianshu/Downloads/dataset2/CM chickenfood/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Su 09:00 - 18:00</p></div>`)[0];
+        popup_3cbbc2027f72ee1124532b4354f74753.setContent(html_a849f9fc1e559a68dade5c9aa918e646);
+    
+
+    marker_f7042fe18ba2fa84485bc788dd22d492.bindPopup(popup_3cbbc2027f72ee1124532b4354f74753)
+    ;
+
+    
+
+
+        marker_f7042fe18ba2fa84485bc788dd22d492.bindTooltip(
+            `<div>
+                 CM chicken
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_6fbcb13028d8776251d7d3f81e00ed88 = L.marker(
+            [39.95477, -75.20272],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_738a5fc4d6db076c3f7bdceeccddd210 = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+        );
+        marker_6fbcb13028d8776251d7d3f81e00ed88.setIcon(icon_738a5fc4d6db076c3f7bdceeccddd210);
+    
+
+    var popup_28dbb73e683d2de89a57da5bc6e502c4 = L.popup({"maxWidth": "100%"});
+
+    
+        var html_798812c7eec97293fc82e459f6deaf48 = $(`<div id="html_798812c7eec97293fc82e459f6deaf48" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>McDonald's</h1><img src ='/Users/swatianshu/Downloads/dataset2/McDonald'sfood/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: 24/7</p></div>`)[0];
+        popup_28dbb73e683d2de89a57da5bc6e502c4.setContent(html_798812c7eec97293fc82e459f6deaf48);
+    
+
+    marker_6fbcb13028d8776251d7d3f81e00ed88.bindPopup(popup_28dbb73e683d2de89a57da5bc6e502c4)
+    ;
+
+    
+
+
+        marker_6fbcb13028d8776251d7d3f81e00ed88.bindTooltip(
+            `<div>
+                 McDonald's
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_fe4036f090e0664431c60d90e642da8c = L.marker(
+            [39.9530145, -75.1922885],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_58c3ac7fd4cb5cb75b06b0d7d6af3a3f = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+        );
+        marker_fe4036f090e0664431c60d90e642da8c.setIcon(icon_58c3ac7fd4cb5cb75b06b0d7d6af3a3f);
+    
+
+    var popup_67e4096e63cfe4c7ce609e59c5a25a4f = L.popup({"maxWidth": "100%"});
+
+    
+        var html_6bbef75c9658aefffd0a50a7b9542919 = $(`<div id="html_6bbef75c9658aefffd0a50a7b9542919" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Starbucks</h1><img src ='/Users/swatianshu/Downloads/dataset3/Starbucks cafe/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Fr 05:30-24:00; Sa,Su 06:00-24:00</p></div>`)[0];
+        popup_67e4096e63cfe4c7ce609e59c5a25a4f.setContent(html_6bbef75c9658aefffd0a50a7b9542919);
+    
+
+    marker_fe4036f090e0664431c60d90e642da8c.bindPopup(popup_67e4096e63cfe4c7ce609e59c5a25a4f)
+    ;
+
+    
+
+
+        marker_fe4036f090e0664431c60d90e642da8c.bindTooltip(
+            `<div>
+                 Starbucks
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_d4d08716e34c9e040747680994263361 = L.marker(
+            [39.9521611, -75.1851511],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_1b02cb7276e9e4d32af91db6e9a9afe3 = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+        );
+        marker_d4d08716e34c9e040747680994263361.setIcon(icon_1b02cb7276e9e4d32af91db6e9a9afe3);
+    
+
+    var popup_46f13274497a79e825de596764a2fac2 = L.popup({"maxWidth": "100%"});
+
+    
+        var html_62722b9c2b798477daa7976dec19c70a = $(`<div id="html_62722b9c2b798477daa7976dec19c70a" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>World Cafe Live</h1><img src ='/Users/swatianshu/Downloads/dataset3/World Cafe Live cafe/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Su 09:00 - 18:00</p></div>`)[0];
+        popup_46f13274497a79e825de596764a2fac2.setContent(html_62722b9c2b798477daa7976dec19c70a);
+    
+
+    marker_d4d08716e34c9e040747680994263361.bindPopup(popup_46f13274497a79e825de596764a2fac2)
+    ;
+
+    
+
+
+        marker_d4d08716e34c9e040747680994263361.bindTooltip(
+            `<div>
+                 World Cafe Live
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_00f24ee09ddafa129337f5b1f24d0824 = L.marker(
+            [39.9528787, -75.2030521],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_7339a5ae1b820e0b61db46974c14a7fd = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
+        );
+        marker_00f24ee09ddafa129337f5b1f24d0824.setIcon(icon_7339a5ae1b820e0b61db46974c14a7fd);
+    
+
+    var popup_6d4e3f6d9c96984138f910188902ebdd = L.popup({"maxWidth": "100%"});
+
+    
+        var html_7046ffeb214da1047326a9e7407c85b0 = $(`<div id="html_7046ffeb214da1047326a9e7407c85b0" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Saxbys</h1><img src ='/Users/swatianshu/Downloads/dataset3/Saxbys cafe/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Su 09:00 - 18:00</p></div>`)[0];
+        popup_6d4e3f6d9c96984138f910188902ebdd.setContent(html_7046ffeb214da1047326a9e7407c85b0);
+    
+
+    marker_00f24ee09ddafa129337f5b1f24d0824.bindPopup(popup_6d4e3f6d9c96984138f910188902ebdd)
+    ;
+
+    
+
+
+        marker_00f24ee09ddafa129337f5b1f24d0824.bindTooltip(
+            `<div>
+                 Saxbys
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_7a00001fc3c908d38c9e671969e2a75f = L.marker(
+            [39.95435, -75.203351],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_c7c06e9b7f9eca2c2dee15ab3d1e1ab7 = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+        );
+        marker_7a00001fc3c908d38c9e671969e2a75f.setIcon(icon_c7c06e9b7f9eca2c2dee15ab3d1e1ab7);
+    
+
+    var popup_48d84acc406a4dadc81eb3b14633f39d = L.popup({"maxWidth": "100%"});
+
+    
+        var html_d47739416f9a68b6c8cdafd990beffd6 = $(`<div id="html_d47739416f9a68b6c8cdafd990beffd6" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Metropolitan Bakery Café</h1><img src ='/Users/swatianshu/Downloads/dataset3/Metropolitan Bakery Café cafe/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Fr 07:30-19:00; Sa-Su 08:00-19:00</p></div>`)[0];
+        popup_48d84acc406a4dadc81eb3b14633f39d.setContent(html_d47739416f9a68b6c8cdafd990beffd6);
+    
+
+    marker_7a00001fc3c908d38c9e671969e2a75f.bindPopup(popup_48d84acc406a4dadc81eb3b14633f39d)
+    ;
+
+    
+
+
+        marker_7a00001fc3c908d38c9e671969e2a75f.bindTooltip(
+            `<div>
+                 Metropolitan Bakery Café
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_14064c5b67f5db6ad40232bc88be4466 = L.marker(
+            [39.9545808, -75.1950636],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_868251c824cbf0dfa13c14504bb30c8a = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "cyan", "prefix": "glyphicon"}
+        );
+        marker_14064c5b67f5db6ad40232bc88be4466.setIcon(icon_868251c824cbf0dfa13c14504bb30c8a);
+    
+
+    var popup_3dd3a0d252d71979a228005e7e2d9664 = L.popup({"maxWidth": "100%"});
+
+    
+        var html_b18248813d3333d32be71978fb25234b = $(`<div id="html_b18248813d3333d32be71978fb25234b" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Kiwi Frozen Yougurt</h1><img src ='/Users/swatianshu/Downloads/dataset3/Kiwi Frozen Yougurt cafe/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Su 09:00 - 18:00</p></div>`)[0];
+        popup_3dd3a0d252d71979a228005e7e2d9664.setContent(html_b18248813d3333d32be71978fb25234b);
+    
+
+    marker_14064c5b67f5db6ad40232bc88be4466.bindPopup(popup_3dd3a0d252d71979a228005e7e2d9664)
+    ;
+
+    
+
+
+        marker_14064c5b67f5db6ad40232bc88be4466.bindTooltip(
+            `<div>
+                 Kiwi Frozen Yougurt
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_e65201d09fd7c0caaaf00ccfc21f6ab0 = L.marker(
+            [39.9530684, -75.1932054],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_a7bbaa183f67587fdde7f84294442551 = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+        );
+        marker_e65201d09fd7c0caaaf00ccfc21f6ab0.setIcon(icon_a7bbaa183f67587fdde7f84294442551);
+    
+
+    var popup_d60d42daad78866dc97de444a8e2154c = L.popup({"maxWidth": "100%"});
+
+    
+        var html_66dd33b4f7b594d05694c051b415d082 = $(`<div id="html_66dd33b4f7b594d05694c051b415d082" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>United By Blue</h1><img src ='/Users/swatianshu/Downloads/dataset3/United By Blue cafe/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Fr 07:00-19:00; Sa,Su 08:00-19:00</p></div>`)[0];
+        popup_d60d42daad78866dc97de444a8e2154c.setContent(html_66dd33b4f7b594d05694c051b415d082);
+    
+
+    marker_e65201d09fd7c0caaaf00ccfc21f6ab0.bindPopup(popup_d60d42daad78866dc97de444a8e2154c)
+    ;
+
+    
+
+
+        marker_e65201d09fd7c0caaaf00ccfc21f6ab0.bindTooltip(
+            `<div>
+                 United By Blue
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_89e32d249a11f96b7fcb4e0e66e1ebe0 = L.marker(
+            [39.9524696, -75.1993841],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_518b91d43ea0313b24f432bfdd0c7244 = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "cyan", "prefix": "glyphicon"}
+        );
+        marker_89e32d249a11f96b7fcb4e0e66e1ebe0.setIcon(icon_518b91d43ea0313b24f432bfdd0c7244);
+    
+
+    var popup_e8f4ab9eb930cdbb04388497e5dbb2cb = L.popup({"maxWidth": "100%"});
+
+    
+        var html_393752588c6a75048bb2882192dc1c2c = $(`<div id="html_393752588c6a75048bb2882192dc1c2c" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Starbucks</h1><img src ='/Users/swatianshu/Downloads/dataset3/Starbucks cafe/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Su 09:00 - 18:00</p></div>`)[0];
+        popup_e8f4ab9eb930cdbb04388497e5dbb2cb.setContent(html_393752588c6a75048bb2882192dc1c2c);
+    
+
+    marker_89e32d249a11f96b7fcb4e0e66e1ebe0.bindPopup(popup_e8f4ab9eb930cdbb04388497e5dbb2cb)
+    ;
+
+    
+
+
+        marker_89e32d249a11f96b7fcb4e0e66e1ebe0.bindTooltip(
+            `<div>
+                 Starbucks
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_6af6c562d274d4ef66449d56fde2c39f = L.marker(
+            [39.9539925, -75.2003926],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_a3246d19729f0ec8d42d2f7cbf2527ec = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "cyan", "prefix": "glyphicon"}
+        );
+        marker_6af6c562d274d4ef66449d56fde2c39f.setIcon(icon_a3246d19729f0ec8d42d2f7cbf2527ec);
+    
+
+    var popup_68a50ee083835bd44976f74a06fce267 = L.popup({"maxWidth": "100%"});
+
+    
+        var html_555d05889624760974349906cea29e8e = $(`<div id="html_555d05889624760974349906cea29e8e" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Starbucks</h1><img src ='/Users/swatianshu/Downloads/dataset3/Starbucks cafe/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Su 09:00 - 18:00</p></div>`)[0];
+        popup_68a50ee083835bd44976f74a06fce267.setContent(html_555d05889624760974349906cea29e8e);
+    
+
+    marker_6af6c562d274d4ef66449d56fde2c39f.bindPopup(popup_68a50ee083835bd44976f74a06fce267)
+    ;
+
+    
+
+
+        marker_6af6c562d274d4ef66449d56fde2c39f.bindTooltip(
+            `<div>
+                 Starbucks
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var marker_121bc79f68dd14e1a063664fc2a082ca = L.marker(
+            [39.95356, -75.19254],
+            {}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+        var icon_143158c076c7f080f92305e1e5d49be7 = L.AwesomeMarkers.icon(
+            {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+        );
+        marker_121bc79f68dd14e1a063664fc2a082ca.setIcon(icon_143158c076c7f080f92305e1e5d49be7);
+    
+
+    var popup_649f5de881e6cd0b5cdda846cc099fcd = L.popup({"maxWidth": "100%"});
+
+    
+        var html_ff9939fccd405c5b30605715265f2e02 = $(`<div id="html_ff9939fccd405c5b30605715265f2e02" style="width: 100.0%; height: 100.0%;"><h1 style = 'text-align:center; font-family:Gaegu'>Avril 50</h1><img src ='/Users/swatianshu/Downloads/dataset3/Avril 50 cafe/Image_1.jpg'width = 300px, height = 300px><p font-family:Gaegu> Opening hours: Mo-Fr 07:30-18:00; Sa 10:00-17:00</p></div>`)[0];
+        popup_649f5de881e6cd0b5cdda846cc099fcd.setContent(html_ff9939fccd405c5b30605715265f2e02);
+    
+
+    marker_121bc79f68dd14e1a063664fc2a082ca.bindPopup(popup_649f5de881e6cd0b5cdda846cc099fcd)
+    ;
+
+    
+
+
+        marker_121bc79f68dd14e1a063664fc2a082ca.bindTooltip(
+            `<div>
+                 Avril 50
+             </div>`,
+            {"sticky": true}
+        );
+    
+
+        var circle_9fc1142252cff34b58c208ab1a2b1a8a = L.circle(
+            [39.9522, -75.1932],
+            {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1000, "stroke": true, "weight": 2}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+    var popup_caca80f35c938bd2c5b2a0f50db7b777 = L.popup({"maxWidth": "100%"});
+
+    
+        var html_51b14a486f024e6f66c9c498766b1ccf = $(`<div id="html_51b14a486f024e6f66c9c498766b1ccf" style="width: 100.0%; height: 100.0%;">Point 3A</div>`)[0];
+        popup_caca80f35c938bd2c5b2a0f50db7b777.setContent(html_51b14a486f024e6f66c9c498766b1ccf);
+    
+
+    circle_9fc1142252cff34b58c208ab1a2b1a8a.bindPopup(popup_caca80f35c938bd2c5b2a0f50db7b777)
+    ;
+
+    
+
+
+        var circle_4964d8c5dc9fbfa88b47617691f69c51 = L.circle(
+            [39.9522, -75.1932],
+            {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 700, "stroke": true, "weight": 2}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+    var popup_f5b9b90c7b34daf9f1b6aaba7836c4fd = L.popup({"maxWidth": "100%"});
+
+    
+        var html_ec420300eccbae7b4526782cff0ccda2 = $(`<div id="html_ec420300eccbae7b4526782cff0ccda2" style="width: 100.0%; height: 100.0%;">Point 2A</div>`)[0];
+        popup_f5b9b90c7b34daf9f1b6aaba7836c4fd.setContent(html_ec420300eccbae7b4526782cff0ccda2);
+    
+
+    circle_4964d8c5dc9fbfa88b47617691f69c51.bindPopup(popup_f5b9b90c7b34daf9f1b6aaba7836c4fd)
+    ;
+
+    
+
+
+        var circle_8fc2908ca72ca2e248d1b435ca4bef5a = L.circle(
+            [39.9522, -75.1932],
+            {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 300, "stroke": true, "weight": 2}
+        ).addTo(map_bf15ad1fa117db3738e9a520d5202f2f);
+    
+
+    var popup_0a5b83d7b28b191732853de0d8455846 = L.popup({"maxWidth": "100%"});
+
+    
+        var html_29b626f7962cd633ad2bae3319147dda = $(`<div id="html_29b626f7962cd633ad2bae3319147dda" style="width: 100.0%; height: 100.0%;">Point 1A</div>`)[0];
+        popup_0a5b83d7b28b191732853de0d8455846.setContent(html_29b626f7962cd633ad2bae3319147dda);
+    
+
+    circle_8fc2908ca72ca2e248d1b435ca4bef5a.bindPopup(popup_0a5b83d7b28b191732853de0d8455846)
+    ;
+
+    
+
+</script>
 
 
     <!-- Restaurant Widgets -->

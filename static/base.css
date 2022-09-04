@@ -191,6 +191,7 @@ nav img{
     align-items: center;
     justify-content: center;
     display: flex;
+    margin-bottom: 50px;
 }
 .leftIcon{
     font-size: 25px;
