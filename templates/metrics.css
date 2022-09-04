@@ -31,6 +31,7 @@ nav{
     overflow: hidden;
     background: #DCE9E2;
     position: fixed;
+    z-index: 2;
 }
 nav img{
     width: 100px;
@@ -126,6 +127,7 @@ nav img{
     position: sticky;
     top: 100px;
     background-color: #FFFEF9;
+    z-index: 2;
 }
 .tabLinks{
     margin-left: 9.5%;
@@ -355,10 +357,33 @@ p{
     font-size: 30px;
     font-weight: bold;
     color: white;
-    padding-left: 15px;
+    padding-left: 17px;
     padding-top: -5px;
 }
-.leaf-pile{
+.small{
+    background-image: url('pics/small_pile.png');
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: -3%;
+}
+.medium{
+    background-image: url('pics/medium_pile.png');
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: -3%;
+    background-position: -5mm;
+}
+.large{
     background-image: url('pics/large_pile.png');
     width: 200px;
     height: 200px;
@@ -406,13 +431,14 @@ p{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    z-index: 1;
   }
   
   /* The actual popup */
   .popup .popuptext {
     visibility: hidden;
     width: 160px;
-    background-color: rgba(42, 73, 57, 0.9);
+    background-color: rgb(42, 73, 57);
     color: white;
     text-align: center;
     border-radius: 6px;

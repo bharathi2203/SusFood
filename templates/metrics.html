@@ -232,6 +232,7 @@
                 <div class="metric-container" id="metricContainer">
                     <div class="distance-container" id="distanceContainer">
                         <div class="head3">Distance</div>
+                        
                         <div class="popup" onclick="myFunction('distance-info')">
                             <span class="fa fa-info-circle" id="info-circle"></span>
                             <span class="popuptext" id="distance-info">
@@ -240,6 +241,7 @@
                                 Consider buying from eateries nearest to you!
                             </span>
                         </div>
+                        
                     </div>
                     <!-- <script src = "distance.js" type ="module"></script> -->
                     <div class="sus-metric" id="distance-rating">
@@ -365,9 +367,28 @@
         </div>
     </div>
 
-    <div class="leaf-pile">
-        <p id="coins">213</p>
+    <div class="leaf-pile" id="leafPile">
+        <p id="coins"></p>
     </div>
+    <script>
+        function rand(){
+            var num = Math.floor(Math.random() * 500);
+            return num.toString();
+        }
+        var num2 = rand();
+        document.getElementById("coins").innerHTML = num2;
+        
+        var elt = document.getElementById("leafPile");
+        if(num2 <= 99){
+            elt.classList.add("small");
+        }
+        else if(100 <= num2 && num2 <= 399){
+            elt.classList.add("medium");
+        }
+        else{
+            elt.classList.add("large");
+        }
+    </script>
     
 </body>
 </html>
